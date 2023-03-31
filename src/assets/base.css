@@ -24,6 +24,12 @@
 
   /* Typography Settings */
   --nr-font-default: Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  --nr-font-size-paragraph: 18px;
+  --nr-font-size-heading-1: 64px;
+  --nr-font-size-heading-2: 48px;
+  --nr-font-size-heading-3: 40px;
+  --nr-font-size-heading-4: 28px;
+  --nr-font-size-caption: 18px;
 }
 
 /* semantic color variables for this project */
@@ -43,6 +49,11 @@
 
   /* Typography */
   --font-default: var(--nr-font-default);
+  --font-size-paragraph: var(--nr-font-size-paragraph);
+  --font-size-h1: var(--nr-font-size-heading-1);
+  --font-size-h2: var(--nr-font-size-heading-2);
+  --font-size-h3: var(--nr-font-size-heading-3);
+  --font-size-h4: var(--nr-font-size-heading-4);
 
   /* CTA Brand Colours */
   --color-button-brand-default: var(--nr-brand-bluemana-500);
@@ -53,6 +64,7 @@
   --footer-gap: 160px;
   --block-gap: 80px;
   --content-gap: 60px;
+  --wrapper-default: 1200px;
 }
 
 
@@ -61,16 +73,30 @@
 *::before,
 *::after {
   box-sizing: border-box;
-  margin: 0;
+
   position: relative;
   font-weight: normal;
+  font-family: var(--font-default);
+  color: var(--color-text)
+}
+
+p {
+font-size: var(--font-size-paragraph);
+color: var(--color-text);
+}
+
+caption{
+  font-size: var(--font-size-paragraph);
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
 }
 
 /* Body defaults */
 body {
   min-height: 100vh;
   color: var(--color-text);
-  background: var(--color-background-soft);
+  background: var(--color-background);
   transition: color 0.5s, background-color 0.5s;
   line-height: 1.6;
   font-family: var(--font-default);
