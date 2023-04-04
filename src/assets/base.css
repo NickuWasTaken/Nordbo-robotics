@@ -2,106 +2,141 @@
 
 /* color palette from Group 7, Norbo-Robotics */
 :root {
-  /* Base Colours & Neutrals */
-  --nr-white: #ffffff;
-  --nr-grey-soft: #f5f5f5;
-  --nr-grey-contrast: #E9EBF8;
+	/* Base Colours & Neutrals */
+	--nr-white: #ffffff;
+	--nr-grey-soft: #f5f5f5;
+	--nr-grey-contrast: #e9ebf8;
 
-  /* Brand Colors */
-  --nr-brand-bluemana-500: #62C3E9;
-  --nr-brand-bluemana-700: #72C9EC;
-  --nr-brand-bluevogue-500: #02215C;
-  --nr-brand-spanishblue-500: #006FB6;
-  --nr-gradient-bg: linear-gradient(180deg, rgba(98, 195, 233, 0.5) 0%, rgba(98, 195, 233, 0) 100%);
+	/* Brand Colors */
+	--nr-brand-bluemana-500: #62c3e9;
+	--nr-brand-bluemana-700: #72c9ec;
+	--nr-brand-bluevogue-500: #02215c;
+	--nr-brand-spanishblue-500: #006fb6;
+	--nr-gradient-bg: linear-gradient(
+		180deg,
+		rgba(98, 195, 233, 0.5) 0%,
+		rgba(98, 195, 233, 0) 100%
+	);
 
-  /* Typography Colours*/
-  --nr-font-color-default: #000;
-  --nr-font-color-soft: rgba(2, 17, 46, 0.5);
-  --nr-brand-font-active: #fff;
+	/* Typography Colours*/
+	--nr-font-color-default: #000;
+	--nr-font-color-soft: rgba(2, 17, 46, 0.5);
+	--nr-brand-font-active: #fff;
 
-  /* Contrast Colours */
-  --nr-inactive: #dedede;
+	/* Contrast Colours */
+	--nr-inactive: #dedede;
 
-  /* Typography Settings */
-  --nr-font-default: Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  --nr-font-size-paragraph: 18px;
-  --nr-font-size-heading-1: 64px;
-  --nr-font-size-heading-2: 48px;
-  --nr-font-size-heading-3: 40px;
-  --nr-font-size-heading-4: 28px;
-  --nr-font-size-caption: 18px;
+	/* Typography Settings */
+	--nr-font-default: Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans',
+		'Droid Sans', 'Helvetica Neue', sans-serif;
+	--nr-font-size-paragraph: 18px;
+	--nr-font-size-heading-1: 64px;
+	--nr-font-size-heading-2: 48px;
+	--nr-font-size-heading-3: 40px;
+	--nr-font-size-heading-4: 28px;
+	--nr-font-size-caption: 18px;
+	--nr-font-weight-default: 400;
+	--nr-font-weight-bold: 600;
 }
 
 /* semantic color variables for this project */
 :root {
-  /* Base Colours & Neutrals */
-  --color-background: var(--nr-white);
-  --color-background-soft: var(--nr-grey-soft);
-  --color-background-contrast: var(--nr-grey-contrast);
+	/* Base Colours & Neutrals */
+	--color-background: var(--nr-white);
+	--color-background-soft: var(--nr-grey-soft);
+	--color-background-contrast: var(--nr-grey-contrast);
 
-  --color-border: var(--nr-grey-contrast);
+	--color-border: var(--nr-grey-contrast);
 
-  --color-heading: var(--nr-font-color-default);
-  --color-text: var(--nr-font-color-default);
-  --color-text-soft: var(--nr-font-color-soft);
-  
-  --inactive-default: var(--nr-inactive);
+	--color-heading: var(--nr-font-color-default);
+	--color-text: var(--nr-font-color-default);
+	--color-text-soft: var(--nr-font-color-soft);
 
-  /* Typography */
-  --font-default: var(--nr-font-default);
-  --font-size-paragraph: var(--nr-font-size-paragraph);
-  --font-size-h1: var(--nr-font-size-heading-1);
-  --font-size-h2: var(--nr-font-size-heading-2);
-  --font-size-h3: var(--nr-font-size-heading-3);
-  --font-size-h4: var(--nr-font-size-heading-4);
+	--inactive-default: var(--nr-inactive);
 
-  /* CTA Brand Colours */
-  --color-button-brand-default: var(--nr-brand-bluemana-500);
-  --color-button-brand-active: var(--nr-brand-bluevogue-500);
-  --color-button-brand-hover: var(--nr-brand-bluemana-700);
+	/* Typography */
+	--font-default: var(--nr-font-default);
+	--font-size-paragraph: var(--nr-font-size-paragraph);
+	--font-size-h1: var(--nr-font-size-heading-1);
+	--font-size-h2: var(--nr-font-size-heading-2);
+	--font-size-h3: var(--nr-font-size-heading-3);
+	--font-size-h4: var(--nr-font-size-heading-4);
 
-/* Spacing defaults */
-  --footer-gap: 160px;
-  --block-gap: 80px;
-  --content-gap: 60px;
-  --wrapper-default: 1200px;
+	--brand-font-active: var(--nr-brand-font-active);
+
+	--font-weight-normal: var(--nr-font-weight-default);
+	--font-weight-bold: var(--nr-font-weight-bold);
+
+	/* CTA Brand Colours */
+	--color-button-brand-default: var(--nr-brand-bluemana-500);
+	--color-button-brand-active: var(--nr-brand-bluevogue-500);
+	--color-button-brand-hover: var(--nr-brand-bluemana-700);
+
+	/* Spacing defaults */
+	--footer-gap: 160px;
+	--block-gap: 80px;
+	--content-gap: 60px;
+	--wrapper-default: 1200px;
 }
-
 
 /* Browser/OS normalization */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+	box-sizing: border-box;
+	position: relative;
+	font-weight: normal;
+	font-family: var(--font-default);
+	color: var(--color-text);
+}
 
-  position: relative;
-  font-weight: normal;
-  font-family: var(--font-default);
-  color: var(--color-text)
+h1 {
+	font-size: var(--font-size-h1);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--font-size-h1);
+}
+
+h2 {
+	font-size: var(--font-size-h2);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--font-size-h2);
+}
+
+h3 {
+	font-size: var(--font-size-h3);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--font-size-h3);
+}
+
+h4 {
+	font-size: var(--font-size-h4);
+	font-weight: var(--font-weight-bold);
+	line-height: var(--font-size-h4);
 }
 
 p {
-font-size: var(--font-size-paragraph);
-color: var(--color-text);
+	font-size: var(--font-size-paragraph);
+	color: var(--color-text);
+	font-weight: var(--font-weight-normal);
 }
 
-caption{
-  font-size: var(--font-size-paragraph);
-  font-weight: 700;
-  letter-spacing: .04em;
-  text-transform: uppercase;
+caption {
+	font-size: var(--font-size-paragraph);
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
 }
 
 /* Body defaults */
 body {
-  min-height: 100vh;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: color 0.5s, background-color 0.5s;
-  line-height: 1.6;
-  font-family: var(--font-default);
-  font-size: 15px;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+	color: var(--color-text);
+	background: var(--color-background);
+	transition: color 0.5s, background-color 0.5s;
+	line-height: 1.6;
+	font-family: var(--font-default);
+	font-size: 15px;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
