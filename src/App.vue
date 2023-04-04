@@ -9,8 +9,7 @@ import RobotInformationCard from './components/cards/RobotInformationCard.vue'
      <CategoryCard />
      <br>
      <RobotInformation />
-     <br>
-     <RobotInformationCard />
+
 
 </template>
 

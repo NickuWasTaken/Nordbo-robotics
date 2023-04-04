@@ -1,5 +1,5 @@
 <script setup>
-
+import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 </script>
 
 <template>
@@ -7,10 +7,12 @@
   <div class="production-type">
     <h2 class="production-type__header ">Production type</h2>
     <p class="production-type__description">When choosing the right production type for a collaborative robot, it is important to consider the specific needs and requirements of the production environment. Collaborative robots are designed to work alongside humans, and they can be used for both high-volume and low-volume production.</p>
+    <RobotInformationCard/>
   </div>
   <div class="production-type precision" id="precision">
     <h2 class="production-type__header  ">Precesion type</h2>
     <p class="production-type__description">When choosing between a high precision or medium precision robot, it's important to consider the specific needs and requirements of the application.</p>
+    <RobotInformationCard/>
   </div> 
 </div>
 </template>
@@ -38,6 +40,7 @@
       line-height: 66px;
       color: #000000;
       margin-bottom: 8px;
+      margin-top: 32px;
     }
     &__description{
       max-width: 894px;
@@ -48,6 +51,7 @@
       line-height: 24px;
       color: #000000;
       margin-top: 8px;
+      // margin-bottom: 56px;
     }
  }
 
