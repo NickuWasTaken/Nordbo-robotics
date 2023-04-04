@@ -1,14 +1,6 @@
 <script setup>
-import { ref, onMounted } from 'vue'
-
-
-
 
 let random = Math.floor(Math.random() * 1000000);
-
-
-
-
 
 </script>
 
