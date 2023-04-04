@@ -51,13 +51,16 @@ const props = defineProps({
 			'This robot is designed to handle complex sanding projects with precision and efficiency. With its advanced features and customizable programming options, this sanding robot is ideal for manufacturers and craftsmen looking to streamline their production processes.',
 	},
 });
+
+const productImage = ref(props.productImage)
+
 </script>
 
 <template>
 	<div class="wrap">
 		<section class="modal">
 			<aside class="modal__product">
-				<img :src="'./src/assets/images/' + props.productImage + '.png'" />
+				<img :src="`/images/${productImage}.png`" />
 			</aside>
 			<main class="modal__info">
 				<header class="modal__info__header">
@@ -93,7 +96,7 @@ const props = defineProps({
 						<p>{{ con.desc }}</p>
 					</li>
 				</ul>
-				<a class="modal__info__button">Select</a>
+				<a href="/solution" class="modal__info__button">Select</a>
 			</main>
 		</section>
 	</div>
@@ -158,6 +161,7 @@ const props = defineProps({
 			h2 {
 				margin: 0;
 				text-transform: uppercase;
+        line-height: 1;
 			}
 
 			caption {
