@@ -42,7 +42,6 @@ const scrollBottom = () => {
           window.scrollTo(0, bottom);
         }
 
-
 const setActiveCard = (id) => {
   let i = 0
   while(products[i]){
@@ -53,9 +52,6 @@ const setActiveCard = (id) => {
 //   console.log(products[id].active);
 //   console.log(id)
 }
-
-
-
 
 </script>
 
@@ -84,6 +80,8 @@ const setActiveCard = (id) => {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+    max-width: 1700px;
+    margin: auto;
   .checked{
     z-index: 6;
     position: absolute;
