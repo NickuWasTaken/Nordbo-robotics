@@ -58,33 +58,31 @@ const productImage = ref(props.productImage)
                     </p>
                 </header>
                 <div class="modal__info__wrap">
-                <div class="modal__info__product">
-                    <caption>
-                        {{
-                            props.categoryType
-                        }}
-                    </caption>
-                    <h1>{{ props.productName }}</h1>
-                    <p>{{ props.productDetails }}</p>
-                </div>
+                    <div class="modal__info__product">
+                        <caption>
+                            {{ props.categoryType }}
+                        </caption>
+                        <h1>{{ props.productName }}</h1>
+                        <p>{{ props.productDetails }}</p>
+                    </div>
 
-                <ul class="modal__info__pros">
-                    <h2>Pros</h2>
-                    <li v-for="pro in objPros" :key="pro">
-                        <div class="pro-list-icon"></div>
-                        <p>{{ pro.desc }}</p>
-                    </li>
-                </ul>
-                <h2>Cons</h2>
-                <ul class="modal__info__cons">
-                    <li v-for="con in objCons" :key="con">
-                        <div class="con-list-icon"></div>
-                        <p>{{ con.desc }}</p>
-                    </li>
-                </ul>
-            </div>
+                    <ul class="modal__info__pros">
+                        <h2>Pros</h2>
+                        <li v-for="pro in objPros" :key="pro">
+                            <div class="pro-list-icon"></div>
+                            <p>{{ pro.desc }}</p>
+                        </li>
+                    </ul>
+                    <h2>Cons</h2>
+                    <ul class="modal__info__cons">
+                        <li v-for="con in objCons" :key="con">
+                            <div class="con-list-icon"></div>
+                            <p>{{ con.desc }}</p>
+                        </li>
+                    </ul>
+                </div>
                 <RouterLink to="/solution"><a class="modal__info__button">Select</a></RouterLink>
-            
+
             </main>
         </section>
     </div>
@@ -122,9 +120,9 @@ const productImage = ref(props.productImage)
             justify-content: center;
         }
 
-        &__info__wrap{
+        &__info__wrap {
             height: 650px;
-            overflow-y: scroll;
+            overflow-y: auto;
             padding-right: 40px;
             margin-bottom: 30px;
         }
@@ -210,6 +208,23 @@ const productImage = ref(props.productImage)
             }
         }
     }
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .pro-list-icon,

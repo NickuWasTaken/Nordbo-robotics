@@ -10,14 +10,10 @@
         </div>
     </section>
     <teleport to='body'>
-        <SelectionModal v-if="productSelected" 
-        :categoryType="props.productData.productType"
-        :productDetails="props.productData.productDetails"
-        :productImage="props.productData.productImage" 
-        :productName="props.productData.productName"
-        :productPros="props.productData.productPros"
-        :productCons="props.productData.productCons"
-         @closeModal="closeSolution" />
+        <SelectionModal v-if="productSelected" :categoryType="props.productData.productType"
+            :productDetails="props.productData.productDetails" :productImage="props.productData.productImage"
+            :productName="props.productData.productName" :productPros="props.productData.productPros"
+            :productCons="props.productData.productCons" @closeModal="closeSolution" />
     </teleport>
 </template>
   
@@ -73,7 +69,7 @@ const closeSolution = () => {
             margin-bottom: 22px;
         }
 
-        h4{
+        h4 {
             margin: 0;
             margin-top: 16px;
         }

@@ -7,6 +7,7 @@
       <img src="@/assets/logo.png" alt="" @click="stepProgress = !stepProgress" class="header__logo">
       <caption>Application tool 1.0</caption>
     </header>
+    <hr>
   </template>
   
   <script setup>
@@ -14,6 +15,12 @@
   </script>
   
   <style lang="scss" scoped>
+  hr{
+    width: 100%;
+    height: 0;
+    border: none;
+    border-bottom: 2px solid var(--color-background-soft);
+  }
   .header {
     width: 1400px;
     margin: 0 auto;
