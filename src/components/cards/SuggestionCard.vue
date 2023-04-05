@@ -1,12 +1,12 @@
 <template>
-    <section class="card" v-for="product in suggestedSolutions">
+    <section class="card">
       <div class="card__image">
         <img :src="`/images/${productImage}.png`" alt="" />
       </div>
       <div class="card__content">
-        <h4 class="card__content__heading">{{ product.productName }}</h4>
-        <p class="card__content__describtion">{{ product.productDesc }}</p>
-        <BaseButton @checkedButton="selectSolution(product.id)" />
+        <h4 class="card__content__heading">{{ data.productName }}</h4>
+        <p class="card__content__describtion">{{ data.productDesc }}</p>
+        <BaseButton @checkedButton="selectSolution(data.id)" />
   
       </div>
     </section>
