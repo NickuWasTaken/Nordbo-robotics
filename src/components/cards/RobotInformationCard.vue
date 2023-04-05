@@ -4,8 +4,6 @@ import BaseButton from '@/components/UI/BaseButton.vue'
 </script>
 
 
-
-
 <template>
 <div class="wrapper">
     <div class="card-volume">
