@@ -6,12 +6,28 @@ import { ref, computed, reactive,  onMounted } from 'vue'
 var products = reactive([{
         "id": 1,
         "name": "Sanding",
+        "description": "Best choice for wood and composites – but other joysticks/handles can be used for other industries to adapt",
         "image": "../src/assets/images/sandingRobot.png",
         "active": false,
     },
     {
        "id": 2,
        "name": "Grinding",
+       "description": "These robots are equipped with specialized tools to perform precise and consistent process on different types of surfaces.",
+       "image": "../src/assets/images/sandingRobot.png",
+        "active": false,
+    },
+    {
+       "id": 3,
+       "name": "Finishing",
+       "description": "Robot finishing involve the use of robotic systems to perform tasks, such as polishing, buffing, and sanding in industries.",
+       "image": "../src/assets/images/sandingRobot.png",
+        "active": false,
+    },
+    {
+       "id": 4,
+       "name": "Deburring",
+       "description": "Robot deburring refer to the use of robotic systems to remove unwanted burrs, sharp edges, and other imperfections.",
        "image": "../src/assets/images/sandingRobot.png",
         "active": false,
     }
@@ -24,11 +40,10 @@ const setActiveCard = (id) => {
   while(products[i]){
     products[i].active = false
     i++
-    
   }
   products[id].active = !products[id].active
-  console.log(products[id].active);
-  console.log(id)
+//   console.log(products[id].active);
+//   console.log(id)
 }
 
 </script>
@@ -37,19 +52,21 @@ const setActiveCard = (id) => {
 <div class="wrapper">
   <div class="card" v-for="product in products" :key="product.id" >
     <div class="card__name" >{{ product.name }}</div>
-    <div class="card__text"> Best choice for wood and composites – but other joysticks/handles can be used for other industries to adapt </div>
+    <div class="card__text"> {{ product.description }} </div>
 
       <BaseButton @CheckedButton="setActiveCard(product.id-1)"/>
       <div class="checked" v-show="product.active"></div>
 
     <div class="card__image">
-    
     <div class="card__triangle"></div>
-    <div class="card__triangle-overlay" v-if="false"></div>
+    <div class="card__triangle-overlay" v-if="product.active"></div>
     <img :src="product.image" alt="">
   </div>
 </div>
+<button class="parameters" v-if="true" >See parameters <div class="parameters__arrow"></div></button>
+
 </div>
+
 
 
 
@@ -66,16 +83,42 @@ const setActiveCard = (id) => {
   align-items: center;
 }
 .checked{
-  z-index: 5;
+  z-index: 6;
   position: absolute;
   top:112px;
   left: 394px;
   height: 85px;
   width: 85px;
-  background-color: pink;
+  background: url("@/assets/icons/checkmark-card.png");
+  background-size: cover;
   border-radius: 100%;
+  background-color: white;
+}
+.parameters{
+
+margin: 50px 0 120px 0;
+border:none;
+padding: 16px 40px;
+width: 240px;
+height: 56px;
+background: #62C3E9;
+border-radius: 77px;
+font-family: 'Roboto';
+font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+color: #000000;
+display: flex;
+cursor: pointer;
+&__arrow{
+    width: 15px;
+    height: 11px;
+    background-image: url("@/assets/icons/arrow-button-right.png");
+    background-size: cover;
+    margin: auto;
 }
 
+}
 .card{
 margin: 20px;
 align-items: flex-start;
@@ -136,14 +179,14 @@ border-radius: 12px;
 
     }
     &__triangle-overlay{ 
-  z-index: 6;
-  background-color: black;
+  z-index: 5;
+
   position: absolute;
   width: 300px;
   height: 308px;
   left: 0px;
   top: 0px;
-  border-bottom: 308px solid black;
+  border-bottom: 308px solid rgba(98, 195, 233, 0.5);;
     border-radius: 0px 10px 10px 0px;
   border-left: 25px solid transparent;
 
@@ -167,7 +210,7 @@ z-index: 3;
 
 
   .card:hover .card__triangle{ 
-    border-bottom: 308px solid blue;
+    border-bottom: 308px solid rgba(98, 195, 233, 0.25);
 
     }
  
