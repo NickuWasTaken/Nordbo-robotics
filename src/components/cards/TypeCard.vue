@@ -50,9 +50,10 @@
   }
   productTypeData[id-1].active = !productTypeData[id-1].active  
   console.log(productTypeData[id].active)
+  
   setTimeout(() => {
     scrollBottom()
-  }, 10)
+  }, 100)
 }
 
 const scrollBottom = () => {

@@ -30,7 +30,7 @@ const scrollBottom = () => {
       <p class="production-type__description">When choosing between a high precision or medium precision robot, it's important to consider the specific needs and requirements of the application.</p>
       <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton="next = true" /></form>
     </div> 
-    <NextButton  v-if="next"/>
+    <RouterLink to="suggestions"><NextButton  v-if="next"/></RouterLink>
   </form>
 </template>
 
