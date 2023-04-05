@@ -10,7 +10,7 @@
       <div class="card__content">
         <h4 class="card__content__header">{{ card.name }}</h4>
         <p class="card__content__paragraph">{{ card.describtion }}</p>
-        <BaseButton @checkedButton="setActiveCard(card.id)"/>
+        <BaseButton @checkedButton="setActiveCard(card.id), $emit('activateNext')"/>
       </div>
     </div>
   </div>
@@ -50,6 +50,14 @@
   }
   productTypeData[id-1].active = !productTypeData[id-1].active  
   console.log(productTypeData[id].active)
+  setTimeout(() => {
+    scrollBottom()
+  }, 10)
+}
+
+const scrollBottom = () => {
+    let bottom = document.body.scrollHeight;
+    window.scrollTo(0, bottom);
 }
   </script>
   
@@ -62,6 +70,7 @@
 
   .card {
     display: flex;
+    width: 590px;
     flex-direction: column;
     margin: 0 auto;
     border: solid 2px var(--color-background-soft);

@@ -8,8 +8,7 @@ import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 </script>
 
 <template>
-    <p>Suggestions</p>
-    <HeadlineHeader />
+    <HeadlineHeader>Suggestions</HeadlineHeader>
     <div class="wrapper">
          <SuggestionCard v-for="product in productData" :product-data="product" />
     </div>
