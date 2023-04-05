@@ -11,15 +11,14 @@ import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
     <p>Suggestions</p>
     <HeadlineHeader />
     <div class="wrapper">
-        <TypeCard />
-        <!-- <SuggestionCard v-for="product in productData" :product-data="product" /> -->
+         <SuggestionCard v-for="product in productData" :product-data="product" />
     </div>
 
 </template>
 
 <style scoped>
 .wrapper {
-    width: 1200px;
+    width: 1280px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
