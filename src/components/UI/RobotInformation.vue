@@ -1,9 +1,12 @@
 <script setup>
 import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 import { ref, computed, reactive,  onMounted } from 'vue'
+import NextButton from '@/components/UI/NextButton.vue'
+
 
 
 let active = ref(false)
+let next = ref(false)
 
 const scrollBottom = () => {
           let bottom = document.body.scrollHeight;
@@ -22,13 +25,13 @@ const scrollBottom = () => {
     <form action=""><RobotInformationCard @click="active = true, scrollBottom()" /></form>
   </div>
   <div class="production-type precision" id="precision" v-if="active" >
-    <h2 class="production-type__header  ">Precesion type</h2>
+    <h2 class="production-type__header  ">Precesion</h2>
     <p class="production-type__description">When choosing between a high precision or medium precision robot, it's important to consider the specific needs and requirements of the application.</p>
-    <form action=""><RobotInformationCard/></form>
+    <form action=""><RobotInformationCard @click="next = true, scrollBottom()" /></form>
   </div> 
-      <button class="parameters" v-if="active" >See suggestions <div class="parameters__arrow"></div></button>
-
+  <NextButton  v-if="next"/>
 </form>
+
 </template>
 
 <style lang="scss" scoped>
@@ -65,31 +68,10 @@ const scrollBottom = () => {
       line-height: 24px;
       color: #000000;
       margin-top: 8px;
-      // margin-bottom: 56px;
+
     }
  }
- .parameters{
-border:none;
-padding: 16px 40px;
-width: 240px;
-height: 56px;
-background: #62C3E9;
-border-radius: 77px;
-font-family: 'Roboto';
-font-weight: 400;
-font-size: 18px;
-line-height: 24px;
-color: #000000;
-display: flex;
-cursor: pointer;
-margin: 50px auto 120px auto;
-&__arrow{
-    width: 15px;
-    height: 11px;
-    background-image: url("@/assets/icons/arrow-button-right.png");
-    background-size: cover;
-    margin: auto;
-}}
+
 
 
 

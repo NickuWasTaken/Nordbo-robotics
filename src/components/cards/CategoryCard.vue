@@ -1,5 +1,7 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue'
+import NextButton from '@/components/UI/NextButton.vue'
+
 
 import { ref, computed, reactive,  onMounted } from 'vue'
 
@@ -33,6 +35,12 @@ var products = reactive([{
     }
 ])
 
+let active = ref(false)
+
+const scrollBottom = () => {
+          let bottom = document.body.scrollHeight;
+          window.scrollTo(0, bottom);
+        }
 
 
 const setActiveCard = (id) => {
@@ -46,6 +54,9 @@ const setActiveCard = (id) => {
 //   console.log(id)
 }
 
+
+
+
 </script>
 
 <template>
@@ -54,8 +65,8 @@ const setActiveCard = (id) => {
     <div class="card__name" >{{ product.name }}</div>
     <div class="card__text"> {{ product.description }} </div>
 
-      <BaseButton @CheckedButton="setActiveCard(product.id-1)"/>
-      <div class="checked" v-show="product.active"></div>
+      <BaseButton @CheckedButton=" setActiveCard(product.id-1),scrollBottom(), active = true"/>
+      <div class="checked" v-show="product.active" ></div>
 
     <div class="card__image">
     <div class="card__triangle"></div>
@@ -63,7 +74,7 @@ const setActiveCard = (id) => {
     <img :src="product.image" alt="">
   </div>
 </div>
-<button class="parameters" v-if="true" >See parameters <div class="parameters__arrow"></div></button>
+<NextButton @check="active" v-if="active"/>
 
 </div>
 
@@ -94,31 +105,7 @@ const setActiveCard = (id) => {
   border-radius: 100%;
   background-color: white;
 }
-.parameters{
 
-margin: 50px 0 120px 0;
-border:none;
-padding: 16px 40px;
-width: 240px;
-height: 56px;
-background: #62C3E9;
-border-radius: 77px;
-font-family: 'Roboto';
-font-weight: 400;
-font-size: 18px;
-line-height: 24px;
-color: #000000;
-display: flex;
-cursor: pointer;
-&__arrow{
-    width: 15px;
-    height: 11px;
-    background-image: url("@/assets/icons/arrow-button-right.png");
-    background-size: cover;
-    margin: auto;
-}
-
-}
 .card{
 margin: 20px;
 align-items: flex-start;
