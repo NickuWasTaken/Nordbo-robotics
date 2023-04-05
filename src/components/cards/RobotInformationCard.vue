@@ -11,12 +11,12 @@ import BaseButton from '@/components/UI/BaseButton.vue'
     <div class="card-volume">
         <h3 class="card-volume__header">High Volume</h3>
         <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
-     <BaseButton />
+        <BaseButton @CheckedButton="$emit('checkedButton')"/>
     </div>
     <div class="card-volume">
         <h3 class="card-volume__header">High Volume</h3>
         <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
-        <BaseButton />
+        <BaseButton @CheckedButton="$emit('checkedButton')"/>
     </div>
 
 </div>
@@ -30,12 +30,9 @@ import BaseButton from '@/components/UI/BaseButton.vue'
 
 <style lang="scss" scoped>
 
-
-
 .wrapper{
     display: flex;
     gap:20px;
-    justify-content: center;
      .card-volume{
     border: 1px solid rgba(0, 0, 0, 0.08);
     filter: drop-shadow(2px 6px 16px rgba(0, 0, 0, 0.08));

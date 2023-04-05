@@ -2,6 +2,7 @@
 import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 import { ref, computed, reactive,  onMounted } from 'vue'
 import NextButton from '@/components/UI/NextButton.vue'
+import BaseButton from '@/components/UI/BaseButton.vue'
 
 
 
@@ -9,8 +10,8 @@ let active = ref(false)
 let next = ref(false)
 
 const scrollBottom = () => {
-          let bottom = document.body.scrollHeight;
-          window.scrollTo(0, bottom);
+    let bottom = document.body.scrollHeight;
+    window.scrollTo(0, bottom);
         }
 
 
@@ -18,16 +19,16 @@ const scrollBottom = () => {
 </script>
 
 <template>
-<form class="wrapper">
-  <div class="production-type">
+<form class="wrapper" >
+  <div class="production-type" >
     <h2 class="production-type__header ">Production type</h2>
     <p class="production-type__description">When choosing the right production type for a collaborative robot, it is important to consider the specific needs and requirements of the production environment. Collaborative robots are designed to work alongside humans, and they can be used for both high-volume and low-volume production.</p>
-    <form action=""><RobotInformationCard @click="active = true, scrollBottom()" /></form>
+    <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton=" active = true " /></form>
   </div>
   <div class="production-type precision" id="precision" v-if="active" >
     <h2 class="production-type__header  ">Precesion</h2>
     <p class="production-type__description">When choosing between a high precision or medium precision robot, it's important to consider the specific needs and requirements of the application.</p>
-    <form action=""><RobotInformationCard @click="next = true, scrollBottom()" /></form>
+    <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton="next = true" /></form>
   </div> 
   <NextButton  v-if="next"/>
 </form>

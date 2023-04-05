@@ -40,6 +40,7 @@ let active = ref(false)
 const scrollBottom = () => {
           let bottom = document.body.scrollHeight;
           window.scrollTo(0, bottom);
+          setTimeout(1000)
         }
 
 
@@ -65,7 +66,7 @@ const setActiveCard = (id) => {
     <div class="card__name" >{{ product.name }}</div>
     <div class="card__text"> {{ product.description }} </div>
 
-      <BaseButton @CheckedButton=" setActiveCard(product.id-1),scrollBottom(), active = true"/>
+      <BaseButton @CheckedButton=" setActiveCard(product.id-1), active = true, scrollBottom()"/>
       <div class="checked" v-show="product.active" ></div>
 
     <div class="card__image">
