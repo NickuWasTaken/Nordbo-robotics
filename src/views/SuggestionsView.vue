@@ -3,15 +3,18 @@ import { RouterLink, RouterView } from 'vue-router'
 import SuggestionCard from '@/components/cards/SuggestionCard.vue'
 import TypeCard from '@/components/cards/TypeCard.vue'
 import productData from '@/assets/data.json'
+import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 
 </script>
 
 <template>
     <p>Suggestions</p>
+    <HeadlineHeader />
     <div class="wrapper">
         <TypeCard />
         <!-- <SuggestionCard v-for="product in productData" :product-data="product" /> -->
     </div>
+
 </template>
 
 <style scoped>

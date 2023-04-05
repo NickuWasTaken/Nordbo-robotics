@@ -6,8 +6,8 @@ let random = Math.floor(Math.random() * 1000000);
 
 <template>
 
- <input  type="radio" :id="random" name="check" >
-  <label :for="random" @click="$emit('checkedButton')"></label>
+    <input  type="radio" :id="random" name="check" >
+    <label :for="random" @click="$emit('checkedButton')"></label>
 
 
 </template>
@@ -28,6 +28,7 @@ label {
       border:none;
       background-color: #62C3E9;
       border-radius: 77px;
+      cursor: pointer;
     }
     label:after{
       content:"Select";

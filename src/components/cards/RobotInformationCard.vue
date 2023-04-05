@@ -34,16 +34,15 @@ import BaseButton from '@/components/UI/BaseButton.vue'
     display: flex;
     gap:20px;
     width: 1200px;
-     .card-volume{
-
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    filter: drop-shadow(2px 6px 16px rgba(0, 0, 0, 0.08));
-     height: 226px;
-    padding: 0 16px;
-    width: 590px;
-    background: #FFFFFF;
-    border-radius: 12px;
-    margin:auto;
+    .card-volume{
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        filter: drop-shadow(2px 6px 16px rgba(0, 0, 0, 0.08));
+        height: 226px;
+        padding: 0 16px;
+        width: 590px;
+        background: #FFFFFF;
+        border-radius: 12px;
+        margin:auto;
     
     &__header{
         width: 162px;
