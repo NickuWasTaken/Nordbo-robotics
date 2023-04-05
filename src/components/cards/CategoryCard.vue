@@ -75,9 +75,12 @@ const setActiveCard = (id) => {
     <img :src="product.image" alt="">
   </div>
 </div>
-<NextButton @check="active" v-if="active"/>
+<br>
+
 
 </div>
+
+<NextButton @check="active" v-if="active"/>
 
 
 
@@ -93,6 +96,7 @@ const setActiveCard = (id) => {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  
 }
 .checked{
   z-index: 6;
@@ -116,6 +120,7 @@ width: 590px;
 height: 308px;
 background: var(--nr-grey-soft);
 border-radius: 12px;
+
 
 
   &__name{

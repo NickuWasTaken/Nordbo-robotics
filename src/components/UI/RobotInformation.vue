@@ -22,7 +22,7 @@ const scrollBottom = () => {
 <form class="wrapper" >
   <div class="production-type" >
     <h2 class="production-type__header ">Production type</h2>
-    <p class="production-type__description">When choosing the right production type for a collaborative robot, it is important to consider the specific needs and requirements of the production environment. Collaborative robots are designed to work alongside humans, and they can be used for both high-volume and low-volume production.</p>
+    <p class="production-type__description">When choosing the right production type for a collaborative robot, it is important to consider the specific needs <br> and requirements of the production environment. Collaborative robots are designed to work alongside humans, <br> and they can be used for both high-volume and low-volume production.</p>
     <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton=" active = true " /></form>
   </div>
   <div class="production-type precision" id="precision" v-if="active" >
@@ -36,39 +36,49 @@ const scrollBottom = () => {
 </template>
 
 <style lang="scss" scoped>
-
+.wrapper{
+  margin: 0 auto;
+}
   #precision{
     background-color: white;
+    
   }
  .production-type{
-    padding: 32px 120px 0px;
+    padding: auto;
     gap: 8px;
     width: 100vw;
-    height: 484px;
+height: 550px;
     background: #F4F4F4;
     margin-left: 0;
-
+    padding-top: 32px;
+    
    
     &__header{
-      width: 343px;
+      width: 1200px;
       height: 66px;
       font-family: 'Roboto';
       font-weight: 700;
       font-size: 48px;
       line-height: 66px;
       color: #000000;
+       margin:auto;
+       
       margin-bottom: 8px;
       margin-top: 32px;
+     
     }
     &__description{
-      max-width: 894px;
-      height: 72px;
+      max-width: 1200px;
+      
       font-family: 'Roboto';
       font-weight: 400;
       font-size: 18px;
       line-height: 24px;
       color: #000000;
+      margin:auto;
       margin-top: 8px;
+      margin-bottom: 56px;
+      
 
     }
  }
