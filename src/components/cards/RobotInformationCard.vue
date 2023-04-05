@@ -18,7 +18,9 @@ import BaseButton from '@/components/UI/BaseButton.vue'
         <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
         <BaseButton />
     </div>
+
 </div>
+
 
 </template>
 
@@ -27,12 +29,14 @@ import BaseButton from '@/components/UI/BaseButton.vue'
 
 
 <style lang="scss" scoped>
+
+
+
 .wrapper{
     display: flex;
     gap:20px;
     justify-content: center;
-}
- .card-volume{
+     .card-volume{
     border: 1px solid rgba(0, 0, 0, 0.08);
     filter: drop-shadow(2px 6px 16px rgba(0, 0, 0, 0.08));
      height: 226px;
@@ -63,6 +67,10 @@ import BaseButton from '@/components/UI/BaseButton.vue'
         
     }
  }
+    
+}
+
+
 
 
 
