@@ -8,6 +8,8 @@ import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 <template>
 <button><RouterLink to="/">home</RouterLink></button>
 <button><RouterLink to="/parameters">parameters</RouterLink></button>
+<button><RouterLink to="/suggestions">suggestions</RouterLink></button>
+<button><RouterLink to="/solution">solution</RouterLink></button>
   
 <RouterView />
 </template>
