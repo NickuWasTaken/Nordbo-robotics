@@ -11,26 +11,8 @@ Kald:
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue';
 
-const objPros = [
-    {
-        id: 1,
-        desc: 'Possibility to include industrial touch screen',
-    },
-    {
-        id: 2,
-        desc: 'Targeted at robot first timers (no-timers)',
-    },
-    {
-        id: 3,
-        desc: 'GUI and Mimic settings preset for sanding',
-    },
-];
-const objCons = [
-    {
-        id: 1,
-        desc: 'Need a conveyor function',
-    },
-];
+const objPros = props.productPros;
+const objCons = props.productCons;
 
 const props = defineProps({
     categoryType: {
@@ -50,6 +32,12 @@ const props = defineProps({
         default:
             'This robot is designed to handle complex sanding projects with precision and efficiency. With its advanced features and customizable programming options, this sanding robot is ideal for manufacturers and craftsmen looking to streamline their production processes.',
     },
+    productPros: {
+        type: Object,
+    },
+    productCons: {
+        type: Object,
+    }
 });
 
 const productImage = ref(props.productImage)
@@ -65,11 +53,12 @@ const productImage = ref(props.productImage)
             <main class="modal__info">
                 <header class="modal__info__header">
                     <p class="modal__info__header__close" @click="$emit('closeModal')">
-                        <img src="@/assets/icons/close-icon.png" class="modal__info__header__close__icon" />
+                        <img src="@/assets/icons/blue-cross.png" class="modal__info__header__close__icon" />
                         Close
                     </p>
                 </header>
-                <div class="modal__info_product">
+                <div class="modal__info__wrap">
+                <div class="modal__info__product">
                     <caption>
                         {{
                             props.categoryType
@@ -93,7 +82,9 @@ const productImage = ref(props.productImage)
                         <p>{{ con.desc }}</p>
                     </li>
                 </ul>
+            </div>
                 <RouterLink to="/solution"><a class="modal__info__button">Select</a></RouterLink>
+            
             </main>
         </section>
     </div>
@@ -101,6 +92,8 @@ const productImage = ref(props.productImage)
 
 <style lang="scss" scoped>
 .wrap {
+    top: 0;
+    left: 0;
     position: absolute;
     display: flex;
     align-items: center;
@@ -129,7 +122,15 @@ const productImage = ref(props.productImage)
             justify-content: center;
         }
 
+        &__info__wrap{
+            height: 650px;
+            overflow-y: scroll;
+            padding-right: 40px;
+            margin-bottom: 30px;
+        }
+
         &__info {
+            height: 100%;
             padding: 64px;
             padding-top: 0;
 
@@ -151,6 +152,7 @@ const productImage = ref(props.productImage)
 
                     &__icon {
                         padding-right: 10px;
+                        height: 20px;
                     }
                 }
             }
@@ -216,10 +218,12 @@ const productImage = ref(props.productImage)
     height: 24px;
     width: 20px;
     margin-right: 10px;
-    background: url('@/assets/icons/pro-icon.png') center no-repeat;
+    background: url('@/assets/icons/green-plus.png') center no-repeat;
+    background-size: 19px;
 }
 
 .con-list-icon {
-    background: url('@/assets/icons/con-icon.png') center no-repeat;
+    background: url('@/assets/icons/red-minus.png') center no-repeat;
+    background-size: 19px;
 }
 </style>

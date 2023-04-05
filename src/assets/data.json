@@ -1,0 +1,104 @@
+[
+    {
+        "id": 1,
+        "productName": "Mimic URCap",
+        "productImage": "Mimic_UR_cap",
+        "productDesc": "Spray painting, Powdercoating, Sandblasting, Dispensing (e.g., glueing)",
+        "productType": "testing1",
+        "productPros": [
+            {
+                "id": 1,
+                "desc": "Pro 1!"
+            },
+            {
+                "id": 2,
+                "desc": "Pro 2"
+            },
+            {
+                "id": 3,
+                "desc": "Pro 3!"
+            }
+        ],
+        "productCons": [
+            {
+                "id": 1,
+                "desc": "Con 1!"
+            },
+            {
+                "id": 2,
+                "desc": "Con 2"
+            },
+            {
+                "id": 3,
+                "desc": "Con 3!"
+            }, {
+                "id": 1,
+                "desc": "Con 1!"
+            },
+            {
+                "id": 2,
+                "desc": "Con 2"
+            },
+            {
+                "id": 3,
+                "desc": "Con 3!"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "productName": "Mimic URCat",
+        "productImage": "Mimic_UR_cap",
+        "productDesc": "Spray painting, Powdercoating, Sandblasting, Dispensing (e.g., glueing)",
+        "productType": "testing2",
+        "Pros": [
+            {
+                "id": 1,
+                "desc": "Possibility to include industrial touch screen"
+            },
+            {
+                "id": 2,
+                "desc": "Targeted at robot first timers (no-timers)"
+            },
+            {
+                "id": 3,
+                "desc": "GUI and Mimic settings preset for sanding"
+            }
+        ],
+        "productCons": [
+            {
+                "id": 1,
+                "desc": "Con 1 of 2nd element!"
+            },
+            {
+                "id": 2,
+                "desc": "Con 2"
+            },
+            {
+                "id": 3,
+                "desc": "Con 3!"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "productName": "Mimic URCap",
+        "productImage": "Mimic_UR_cap",
+        "productDesc": "Spray painting, Powdercoating, Sandblasting, Dispensing (e.g., glueing)",
+        "productType": "testing3",
+        "Pros": [
+            {
+                "id": 1,
+                "desc": "Possibility to include industrial touch screen"
+            },
+            {
+                "id": 2,
+                "desc": "Targeted at robot first timers (no-timers)"
+            },
+            {
+                "id": 3,
+                "desc": "GUI and Mimic settings preset for sanding"
+            }
+        ]
+    }
+]

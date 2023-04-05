@@ -6,7 +6,7 @@ import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 </script>
 
 <template>
-
+  <p>Solutions</p>
   <RobotInformation />
 </template>
 
