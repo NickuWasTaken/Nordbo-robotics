@@ -63,7 +63,7 @@ const scrollBottom = () => {
   </script>
   
   <style lang="scss" scoped>
-  .wrapper .wrapper:nth-child(2){
+  .type-card-wrapper .wrapper:nth-child(2){
     .card__image{
     background: #DFDBD9;
     }
