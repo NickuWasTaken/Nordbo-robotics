@@ -8,11 +8,11 @@ import StepByStep from '@/components/UI/StepByStep.vue'
 
 </script>
 
-<template>
+<template nativeOnScroll="centerModal">
       <StepByStep progress="3"/>
     <HeadlineHeader>Suggestions</HeadlineHeader>
     <div class="wrapper">
-         <SuggestionCard v-for="product in productData" :product-data="product" />
+         <SuggestionCard v-for="product in productData" :product-data="product"/>
     </div>
 
 </template>
@@ -23,6 +23,7 @@ import StepByStep from '@/components/UI/StepByStep.vue'
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+    padding-bottom: 160px;
 }
 </style>
 

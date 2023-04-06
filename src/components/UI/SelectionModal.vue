@@ -45,7 +45,7 @@ const productImage = ref(props.productImage)
 </script>
 
 <template>
-    <div class="wrap">
+    <div class="wrap" id="modal-wrap">
         <section class="modal">
             <aside class="modal__product">
                 <img :src="`/images/${productImage}.png`" />
@@ -100,6 +100,7 @@ const productImage = ref(props.productImage)
     width: 100%;
 
     .modal {
+
         z-index: 99;
         width: 1280px;
         height: 900px;

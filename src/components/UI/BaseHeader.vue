@@ -22,7 +22,6 @@
     border-bottom: 2px solid var(--color-background-soft);
   }
   .header {
-    max-width: 1400px;
     margin: 0 40px auto;
     display: flex;
     align-items: center;
