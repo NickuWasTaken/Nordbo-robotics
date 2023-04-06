@@ -1,30 +1,39 @@
 <template>
     <div>
         <ul class="steps">
-            <li class="steps__step" :class="{'steps__step--inactive' : props.progress < 1}">
-                <div class="steps__step__circle" :class="{'steps__step__circle--active' : props.progress == 1 , 'steps__step__circle--completed' : props.progress > 1 }">
+            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 1 }">
+                <div class="steps__step__circle"
+                    :class="{ 'steps__step__circle--active': props.progress == 1, 'steps__step__circle--completed': props.progress > 1 }">
                     <p v-if="props.progress <= 1">1</p>
+                    <RouterLink to="/" v-if="props.progress > 1"> </RouterLink>
                 </div>
                 <p>Application</p>
                 <hr v-if="props.progress > 1">
             </li>
-            <li class="steps__step" :class="{'steps__step--inactive' : props.progress < 2}">
-                <div class="steps__step__circle" :class="{'steps__step__circle--active' : props.progress == 2 , 'steps__step__circle--completed' : props.progress > 2 }">
-                    <p v-if="props.progress <= 2">2</p>
+
+            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 2 }">
+                <div class="steps__step__circle"
+                    :class="{ 'steps__step__circle--active': props.progress == 2, 'steps__step__circle--completed': props.progress > 2 }">
+                    <p v-show="props.progress <= 2">2</p>
+                    <RouterLink to="/parameters" v-if="props.progress > 2"> </RouterLink>
                 </div>
                 <p>Parameters</p>
                 <hr v-if="props.progress > 2">
             </li>
-            <li class="steps__step" :class="{'steps__step--inactive' : props.progress < 3}">
-                <div class="steps__step__circle" :class="{'steps__step__circle--active' : props.progress == 3, 'steps__step__circle--completed' : props.progress > 3 }">
-                    <p v-if="props.progress <= 3">3</p>
-                </div>
+            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 3 }">
+                    <div class="steps__step__circle"
+                        :class="{ 'steps__step__circle--active': props.progress == 3, 'steps__step__circle--completed': props.progress > 3 }">
+                        <p v-if="props.progress <= 3">3</p>
+                        <RouterLink to="/suggestions" v-if="props.progress > 3"> </RouterLink>
+                    </div>
                 <p>Suggestion</p>
                 <hr v-if="props.progress > 3">
             </li>
-            <li class="steps__step" :class="{'steps__step--inactive' : props.progress < 4}">
-                <div class="steps__step__circle" :class="{'steps__step__circle--active' : props.progress == 4 , 'steps__step__circle--completed' : props.progress > 4 }">
+            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 4 }">
+                <div class="steps__step__circle"
+                    :class="{ 'steps__step__circle--active': props.progress == 4, 'steps__step__circle--completed': props.progress > 4 }">
                     <p v-if="props.progress <= 4">4</p>
+                    <RouterLink to="/solution"  v-if="props.progress > 4"> </RouterLink>
                 </div>
                 <p>Solution</p>
             </li>
@@ -34,7 +43,10 @@
 </template>
 
 <script setup>
-const props = defineProps(['progress']) 
+import { RouterLink } from 'vue-router'
+
+const props = defineProps(['progress'])
+
 </script>
 
 <style lang="scss" scoped>
@@ -51,10 +63,10 @@ const props = defineProps(['progress'])
         width: 87px;
         margin: 0 24px;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
 
-        hr{
+        hr {
             z-index: 1;
             position: absolute;
             width: 130px;
@@ -65,10 +77,18 @@ const props = defineProps(['progress'])
             border-bottom: 2px solid var(--color-button-brand-default);
         }
 
-        > p{
+        > p {
             margin: 0;
             margin-top: 16px;
         }
+
+        a {
+                display: inline-block;
+                position: absolute;
+                width: 32px !important;
+                height: 32px !important;
+                border-radius: 50%;
+            }
 
         &__circle {
             z-index: 4;
@@ -102,7 +122,7 @@ const props = defineProps(['progress'])
             background: var(--inactive-default) !important;
         }
 
-        > p {
+        >p {
             color: var(--inactive-default);
         }
     }

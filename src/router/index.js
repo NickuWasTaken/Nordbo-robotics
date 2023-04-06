@@ -28,7 +28,8 @@ const router = createRouter({
             component: () =>
                 import ('@/views/SolutionsView.vue')
         }
-    ]
+    ],
+    linkActiveClass: 'nr-active-page',
 })
 
 export default router

@@ -8,7 +8,7 @@ import StepByStep from '@/components/UI/StepByStep.vue'
 </script>
 
 <template>
-  <StepByStep progress="2"/>
+  <StepByStep progress="4"/>
   <HeadlineHeader>Solutions</HeadlineHeader>
   <RobotInformation />
 </template>

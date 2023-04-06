@@ -7,11 +7,13 @@ import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 import TypeCard from '@/components/cards/TypeCard.vue'
 import ParametersSteps from '@/components/UI/ParametersSteps.vue'
+import StepByStep from '@/components/UI/StepByStep.vue'
 
 let robotInformationCheck = ref(false)
 </script>
 
 <template>
+    <StepByStep progress="2"/>
   <HeadlineHeader>Parameters</HeadlineHeader>
   <ParametersSteps />
   <div class="type-card-wrapper">
