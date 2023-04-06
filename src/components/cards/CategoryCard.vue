@@ -1,9 +1,9 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue'
 import NextButton from '@/components/UI/NextButton.vue'
+import SearchBar from '@/components/UI/SearchBar.vue'
 
-
-import { ref, computed, reactive,  onMounted } from 'vue'
+import { ref, computed, reactive, onMounted } from 'vue'
 
 var products = reactive([{
         "id": 1,
@@ -53,13 +53,58 @@ const setActiveCard = (id) => {
 //   console.log(id)
 }
 
+
+let input = ref("");
+let show = ref(true);
+// let check = () => {
+//     console.log(products[0].name)
+//     console.log(input.value)
+
+//     if(input.value == products[0].name){
+//         show = false
+
+//     }
+//     if(input.value != products[0].name){
+//         show = true
+
+//     }
+// }
+
+
+
+const robots = [products[0].name, products[1].name, products[2].name, products[3].name];
+let filteredList = () => {
+    return robots.filter((robots) =>
+    robots.toLowerCase().includes(input.value.toLowerCase())
+ 
+  );  
+}
+
+
 </script>
 
 <template>
-    <div class="wrapper">
+
+
+
+<div class="container">
+    <h3 class="container__header">Choose Application </h3>
+    <p class="container__text">When choosing the right Application for a collaborative robot, it is important to consider the specific needs and requirements of the production environment.</p>
+    <div class="searchbar">
+        <div class="search-icon"></div>
+        <input v-model="input"  @keydown="check" type="text" id="robots" name="search" placeholder="Search..." maxlength="15" >
+        <div  v-for="robots in filteredList()" :key="robots">
+          <p>{{ robots }}</p>
+        </div>
+    </div>
+</div>
+
+
+
+    <div class="wrapper" >
     <div class="card" v-for="product in products" :key="product.id" >
-        <div class="card__name" >{{ product.name }}</div>
-        <div class="card__text"> {{ product.description }} </div>
+        <div class="card__name" v-if="show"  >{{ product.name }}</div>
+        <div class="card__text"  > {{ product.description }} </div>
         <BaseButton @CheckedButton=" setActiveCard(product.id-1), active = true, scrollBottom()" />
         <div class="checked" v-show="product.active" ></div>
         <div class="card__image">
@@ -74,6 +119,8 @@ const setActiveCard = (id) => {
 </template>
 
 <style lang="scss" scoped>
+
+
 
 .wrapper{
   display: flex;
@@ -183,6 +230,64 @@ const setActiveCard = (id) => {
 
     }
  
+
+ .container{
+    margin:auto;
+    max-width: 1200px;
+    &__header{
+    width: 590px;
+    height: 44px;
+    font-family: 'Roboto';
+    font-size: 36px;
+    line-height: 44px;
+    letter-spacing: 1.2px;
+    color: #02112E;
+    margin-bottom: 0;
+    }
+    &__text{
+    margin-top: 16px;
+   
+    width: 566px;
+    height: 72px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    color: #000000;
+    }
+    .searchbar{
+        display: flex;
+        border:none;
+        padding: 16px 32px;
+        gap: 25px;
+        width: 460px;
+        height: 56px;
+        background: #F5F5F5;
+        border-radius: 200px;
+        margin: 80px 0;
+        margin-left: -10px;
+        input{
+            border:none;
+            background: #F5F5F5;
+            font-family: 'Roboto';
+            font-size: 18px;
+            color: #8E98A8;
+            outline: 0;
+            width: 420px;
+        }
+        .search-icon{
+            width: 19px;
+            height: 19px;
+            background-image: url("@/assets/icons/magnifying-glass.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin:auto;
+
+        }
+    }
+}
+
 
   
 </style>
