@@ -54,31 +54,12 @@ const setActiveCard = (id) => {
 }
 
 
-let input = ref("");
-let show = ref(true);
-// let check = () => {
-//     console.log(products[0].name)
-//     console.log(input.value)
-
-//     if(input.value == products[0].name){
-//         show = false
-
-//     }
-//     if(input.value != products[0].name){
-//         show = true
-
-//     }
-// }
-
-
-
-const robots = [products[0].name, products[1].name, products[2].name, products[3].name];
-let filteredList = () => {
-    return robots.filter((robots) =>
-    robots.toLowerCase().includes(input.value.toLowerCase())
- 
-  );  
-}
+const search = ref("")
+const searchFunction = computed(() => {
+      return products.filter((item) => {
+        return item.name.toLowerCase().includes(search.value);
+      });
+    });
 
 
 </script>
@@ -92,18 +73,14 @@ let filteredList = () => {
     <p class="container__text">When choosing the right Application for a collaborative robot, it is important to consider the specific needs and requirements of the production environment.</p>
     <div class="searchbar">
         <div class="search-icon"></div>
-        <input v-model="input"  @keydown="check" type="text" id="robots" name="search" placeholder="Search..." maxlength="15" >
-        <div  v-for="robots in filteredList()" :key="robots">
-          <p>{{ robots }}</p>
-        </div>
+        <input v-model="search"  type="text" id="robots" name="search" placeholder="Search..." maxlength="15" >
     </div>
 </div>
 
-
-
     <div class="wrapper" >
-    <div class="card" v-for="product in products" :key="product.id"  >
-        <div class="card__name" v-if="show"  >{{ product.name }}</div>
+    <!-- <div class="card" v-for="product in products" :key="product.id"  > -->
+    <div class="card" v-for="product in searchFunction" :key="product.id"  >
+        <div class="card__name"  >{{ product.name }}</div>
         <div class="card__text"  > {{ product.description }} </div>
         <div @click="scrollBottom()"><BaseButton @CheckedButton=" setActiveCard(product.id-1), active = true" /></div>
         
@@ -127,9 +104,8 @@ let filteredList = () => {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-    max-width: 1700px;
-    margin: auto;
+  max-width: 1700px;
+  margin: auto;
   .checked{
     z-index: 6;
     position: absolute;
@@ -152,8 +128,6 @@ let filteredList = () => {
         height: 308px;
         background: var(--nr-grey-soft);
         border-radius: 12px;
-
-
 
     &__name{
         width: 199px;

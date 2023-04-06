@@ -27,7 +27,7 @@ const scrollBottom = () => {
     </div>
     <div class="production-type precision" id="precision" v-if="active" >
       <h2 class="production-type__header  ">Precision</h2>
-      <p class="production-type__description">When choosing between a high precision or medium precision robot, it's important to consider the specific needs and requirements of the application.</p>
+      <p class="production-type__description">When choosing between a high precision or medium precision robot, it's important to consider the specific <br> needs and requirements of the application.</p>
       <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton="next = true" /></form>
     </div> 
     <RouterLink to="suggestions"><NextButton  v-if="next"/></RouterLink>
