@@ -63,11 +63,14 @@ const productImage = ref(props.productImage)
             </main>
         </section>
         <div class="last-steps">
-            <div class="last-steps__restart">
-                <p>Start over</p>
-                <img src="@/assets/icons/blue-return.png" class="last-steps__icon" alt="">
-            </div>
-            <a>Choose solution <img src="@/assets/icons/pdf-icon.png" class="last-steps__icon" alt=""></a>
+            <RouterLink to="/">
+                <div class="last-steps__restart">
+                    <p>Start over</p>
+                    <img src="@/assets/icons/blue-return.png" class="last-steps__icon" alt="">
+                </div>
+            </RouterLink>
+            <a class="last-steps__save-pdf">Choose solution <img src="@/assets/icons/pdf-icon.png" class="last-steps__icon"
+                    alt=""></a>
         </div>
     </div>
 </template>
@@ -79,7 +82,7 @@ const productImage = ref(props.productImage)
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 60px;
+    margin-top: 100px;
     width: 100%;
 
     .solution {
@@ -105,7 +108,7 @@ const productImage = ref(props.productImage)
             align-items: center;
             justify-content: center;
 
-            img{
+            img {
                 max-width: 100%;
             }
         }
@@ -134,19 +137,19 @@ const productImage = ref(props.productImage)
         }
     }
 
-    .last-steps{
+    .last-steps {
         margin-top: 30px;
         align-items: center;
         padding-left: 700px;
         display: flex;
 
-        &__restart{
+        &__restart {
             display: flex;
             align-items: center;
             margin-right: 25px;
         }
 
-        a{
+        &__save-pdf {
             background-color: var(--color-button-brand-default);
             padding: 16px 32px;
             border-radius: 32px;
@@ -155,7 +158,8 @@ const productImage = ref(props.productImage)
             align-items: center;
 
         }
-        &__icon{
+
+        &__icon {
             height: 20px;
             margin-left: 10px;
         }
