@@ -231,8 +231,7 @@ let filteredList = () => {
 
     }
  
-
- .container{
+ .container{ 
     margin:auto;
     max-width: 1200px;
     &__header{
@@ -275,7 +274,7 @@ let filteredList = () => {
             font-size: 18px;
             color: #8E98A8;
             outline: 0;
-            width: 420px;
+            width: 420px; 
         }
         .search-icon{
             width: 19px;
