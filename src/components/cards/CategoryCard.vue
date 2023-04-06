@@ -102,10 +102,11 @@ let filteredList = () => {
 
 
     <div class="wrapper" >
-    <div class="card" v-for="product in products" :key="product.id" >
+    <div class="card" v-for="product in products" :key="product.id"  >
         <div class="card__name" v-if="show"  >{{ product.name }}</div>
         <div class="card__text"  > {{ product.description }} </div>
-        <BaseButton @CheckedButton=" setActiveCard(product.id-1), active = true, scrollBottom()" />
+        <div @click="scrollBottom()"><BaseButton @CheckedButton=" setActiveCard(product.id-1), active = true" /></div>
+        
         <div class="checked" v-show="product.active" ></div>
         <div class="card__image">
             <div class="card__triangle"></div>
