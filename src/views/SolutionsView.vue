@@ -1,18 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import CategoryCard from '@/components/cards/CategoryCard.vue'
-import RobotInformation from '@/components/UI/RobotInformation.vue'
-import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
+import SolutionChoice from '@/components/UI/SolutionChoice.vue'
 import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 import StepByStep from '@/components/UI/StepByStep.vue'
 </script>
 
 <template>
   <StepByStep progress="4"/>
-  <HeadlineHeader>Solutions</HeadlineHeader>
-  <RobotInformation />
+  <HeadlineHeader>Suggested Solution</HeadlineHeader>
+  <SolutionChoice />
+  
 </template>
 
-<style scoped></style>
+<style lang="scss" scoped>
+
+</style>
 
    

@@ -20,7 +20,6 @@ let robotInformationCheck = ref(false)
     <TypeCard @activateNext="robotInformationCheck = true"/>
   </div>
   <RobotInformation v-if="robotInformationCheck"/>
-
 </template>
 
 <style scoped>

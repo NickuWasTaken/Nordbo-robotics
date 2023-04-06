@@ -100,6 +100,7 @@ const productImage = ref(props.productImage)
     width: 100%;
 
     .modal {
+        z-index: 99;
         width: 1280px;
         height: 900px;
         border-radius: 15px;
