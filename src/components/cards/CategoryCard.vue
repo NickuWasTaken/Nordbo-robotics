@@ -114,7 +114,7 @@ let filteredList = () => {
         </div>
     </div>
     </div>
-    <NextButton @check="active" v-if="active"/>
+    <RouterLink to="parameters"><NextButton  @check="active" v-if="active"/></RouterLink>
 
 </template>
 
