@@ -22,11 +22,16 @@
     border-bottom: 2px solid var(--color-background-soft);
   }
   .header {
-    width: 1400px;
-    margin: 0 auto;
+    max-width: 1400px;
+    margin: 0 40px auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-bottom: 10px;
+
+    > *{
+      width: 209px;
+    }
   
   &__back-button {
       display: flex;

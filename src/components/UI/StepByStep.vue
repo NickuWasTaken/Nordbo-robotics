@@ -39,8 +39,12 @@ const props = defineProps(['progress'])
 
 <style lang="scss" scoped>
 .steps {
+    padding: 0;
+    padding-top: 60px;
+    margin: 0 auto;
     display: flex;
     align-items: center;
+    justify-content: center;
     list-style: none;
 
     &__step {
