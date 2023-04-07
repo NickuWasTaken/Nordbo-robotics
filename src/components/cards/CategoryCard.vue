@@ -2,7 +2,15 @@
 import BaseButton from '@/components/UI/BaseButton.vue'
 import NextButton from '@/components/UI/NextButton.vue'
 
+import {categoryStore} from '@/stores/data.js'
+
 import { ref, computed, reactive, onMounted } from 'vue'
+
+const test = categoryStore()
+test.getData()
+console.log(test.dataObj)
+
+
 
 var products = reactive([{
         "id": 1,
