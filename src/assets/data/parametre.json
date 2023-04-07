@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "features",
+    "describtion": "text",
+    "features": [
+      {
+        "id": 1,
+        "name": "Point to Point",
+        "describtion": "text"
+      },
+      {
+        "id": 2,
+        "name": "Program building",
+        "describtion": "text"
+      },
+      {
+        "id": 3,
+        "name": "Force Control",
+        "describtion": "text"
+      },
+      {
+        "id": 4,
+        "name": "Path simulation",
+        "describtion": "text"
+      }
+      
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Robot Type",
+    "describtion": "text",
+    "features": [
+      {
+        "id": 1,
+        "name": "Industrial",
+        "describtion": "text"
+      },
+      {
+        "id": 2,
+        "name": "Collaborative",
+        "describtion": "text"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Prodution Type",
+    "describtion": "text",
+    "features": [
+      {
+        "id": 1,
+        "name": "low mix, high vol",
+        "describtion": "text"
+      },
+      {
+        "id": 2,
+        "name": "high mix, low vol",
+        "describtion": "text"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Ease of Use",
+    "describtion": "text",
+    "features": [
+      {
+        "id": 1,
+        "name": "Custom Joystick",
+        "describtion": "text"
+      },
+      {
+        "id": 2,
+        "name": "Tactile/visual Feedback",
+        "describtion": "text"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Precision",
+    "describtion": "text",
+    "features": [
+      {
+        "id": 1,
+        "name": "High",
+        "describtion": "text"
+      },
+      {
+        "id": 2,
+        "name": "Medium",
+        "describtion": "text"
+      }
+    ]
+  }
+]

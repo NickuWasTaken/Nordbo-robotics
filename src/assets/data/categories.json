@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "name": "Sanding",
+    "description": "Best choice for wood and composites – but other joysticks/handles can be used for other industries to adapt",
+    "image": "../src/assets/images/sandingRobot.png",
+    "active": false,
+    "parameters": [1,2,3,4,5]
+  },
+  {
+    "id": 2,
+    "name": "Grinding",
+    "description": "These robots are equipped with specialized tools to perform precise and consistent process on different types of surfaces.",
+    "image": "../src/assets/images/sandingRobot.png",
+    "active": false,
+    "parameters": [1,2,3,4,5]
+  },
+  {
+    "id": 3,
+    "name": "Finishing",
+    "description": "Robot finishing involve the use of robotic systems to perform tasks, such as polishing, buffing, and sanding in industries.",
+    "image": "../src/assets/images/sandingRobot.png",
+    "active": false,
+    "parameters": [2,3,4,5]
+  },
+  {
+    "id": 4,
+    "name": "Deburring",
+    "description": "Robot deburring refer to the use of robotic systems to remove unwanted burrs, sharp edges, and other imperfections.",
+    "image": "../src/assets/images/sandingRobot.png",
+    "active": false,
+    "parameters": [1,2,3,4,5]
+  }
+]

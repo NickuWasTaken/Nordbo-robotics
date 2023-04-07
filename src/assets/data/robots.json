@@ -1,0 +1,193 @@
+[
+  {
+    "id": 1,
+    "name": "Mimic URCap",
+    "image": "Mimic_UR_cap",
+    "desc": "Spray painting, Powdercoating, Sandblasting, Dispensing (e.g., glueing)",
+    "category": [1, 2, 3, 4],
+    "parameters": [
+      {
+        "parameter": 2,
+        "feature": 2
+      },
+      {
+        "parameter": 3,
+        "feature": 1
+      },
+      {
+        "parameter": 4,
+        "feature": 1
+      },
+      {
+        "parameter": 5,
+        "feature": 2
+      }
+    ],
+    "pros": [
+      {
+        "id": 1,
+        "desc": "Pro 1!"
+      },
+      {
+        "id": 2,
+        "desc": "Pro 2"
+      },
+      {
+        "id": 3,
+        "desc": "Pro 3!"
+      }
+    ],
+    "cons": [
+      {
+        "id": 1,
+        "desc": "Con 1!"
+      },
+      {
+        "id": 2,
+        "desc": "Con 2"
+      },
+      {
+        "id": 3,
+        "desc": "Con 3!"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Sander",
+    "image": "Sander",
+    "desc": "High performance tool designed to make sanding tasks fast, efficient, and effortless",
+    "category": [1, 2, 4],
+    "parameters": [
+      {
+        "parameter": 1,
+        "feature": 2
+      },
+      {
+        "parameter": 1,
+        "feature": 3
+      },
+      {
+        "parameter": 2,
+        "feature": 1
+      },
+      {
+        "parameter": 2,
+        "feature": 2
+      },
+      {
+        "parameter": 3,
+        "feature": 1
+      },
+      {
+        "parameter": 4,
+        "feature": 1
+      },
+      {
+        "parameter": 4,
+        "feature": 2
+      },
+      {
+        "parameter": 5,
+        "feature": 1
+      }
+    ],
+    "pros": [
+      {
+        "id": 1,
+        "desc": "Pro 1!"
+      },
+      {
+        "id": 2,
+        "desc": "Pro 2"
+      },
+      {
+        "id": 3,
+        "desc": "Pro 3!"
+      }
+    ],
+    "cons": [
+      {
+        "id": 1,
+        "desc": "Con 1!"
+      },
+      {
+        "id": 2,
+        "desc": "Con 2"
+      },
+      {
+        "id": 3,
+        "desc": "Con 3!"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Craftmate",
+    "image": "Craftmate",
+    "desc": "With its cutting-edge technology, Craftmate simplifies even the most complex tasks",
+    "category": [1, 2, 4],
+    "parameters": [
+      {
+        "parameter": 1,
+        "feature": 1
+      },
+      {
+        "parameter": 1,
+        "feature": 2
+      },
+      {
+        "parameter": 1,
+        "feature": 3
+      },
+      {
+        "parameter": 1,
+        "feature": 4
+      },
+      {
+        "parameter": 2,
+        "feature": 1
+      },
+      {
+        "parameter": 2,
+        "feature": 2
+      },
+      {
+        "parameter": 3,
+        "feature": 2
+      },
+      {
+        "parameter": 5,
+        "feature": 1
+      }
+    ],
+    "pros": [
+      {
+        "id": 1,
+        "desc": "Pro 1!"
+      },
+      {
+        "id": 2,
+        "desc": "Pro 2"
+      },
+      {
+        "id": 3,
+        "desc": "Pro 3!"
+      }
+    ],
+    "cons": [
+      {
+        "id": 1,
+        "desc": "Con 1!"
+      },
+      {
+        "id": 2,
+        "desc": "Con 2"
+      },
+      {
+        "id": 3,
+        "desc": "Con 3!"
+      }
+    ]
+  }
+]
