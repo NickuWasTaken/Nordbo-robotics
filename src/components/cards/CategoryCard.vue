@@ -66,8 +66,6 @@ const searchFunction = computed(() => {
 
 <template>
 
-
-
 <div class="container">
     <h3 class="container__header">Choose Application </h3>
     <p class="container__text">When choosing the right Application for a collaborative robot, it is important to consider the specific needs and requirements of the production environment.</p>
@@ -118,7 +116,6 @@ const searchFunction = computed(() => {
     border-radius: 100%;
     background-color: white;
     }
-
     .card{
         margin: 20px;
         align-items: flex-start;

@@ -16,6 +16,11 @@ import BaseButton from '@/components/UI/BaseButton.vue'
         <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
         <BaseButton @CheckedButton="$emit('checkedButton')"/>
     </div>
+       <!-- <div class="card-volume">
+        <h3 class="card-volume__header">High Volume</h3>
+        <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
+        <BaseButton @CheckedButton="$emit('checkedButton')"/>
+    </div> -->
 
 </div>
 
@@ -30,8 +35,9 @@ import BaseButton from '@/components/UI/BaseButton.vue'
 
 .wrapper{
     display: flex;
+    flex-wrap: wrap;
     gap:20px;
-    width: 1200px;
+    max-width: 1200px;
     .card-volume{
         border: 1px solid rgba(0, 0, 0, 0.08);
         filter: drop-shadow(2px 6px 16px rgba(0, 0, 0, 0.08));
@@ -40,7 +46,6 @@ import BaseButton from '@/components/UI/BaseButton.vue'
         width: 590px;
         background: #FFFFFF;
         border-radius: 12px;
-        margin:auto;
     
     &__header{
         width: 162px;

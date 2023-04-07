@@ -23,7 +23,7 @@ const scrollBottom = () => {
     <div class="production-type" >
       <h2 class="production-type__header ">Production type</h2>
       <p class="production-type__description">When choosing the right production type for a collaborative robot, it is important to consider the specific needs <br> and requirements of the production environment. Collaborative robots are designed to work alongside humans, <br> and they can be used for both high-volume and low-volume production.</p>
-      <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton=" active = true " /></form>
+      <form @click="scrollBottom()" action=""><RobotInformationCard @CheckedButton=" active = true " /> </form>
     </div>
     <div class="production-type precision" id="precision" v-if="active" >
       <h2 class="production-type__header  ">Precision</h2>
@@ -44,7 +44,7 @@ const scrollBottom = () => {
       padding: auto;
       gap: 8px;
       width: 100vw;
-      height: 550px;
+      padding-bottom: 50px;
       background: #F4F4F4;
       margin-left: 0;
       padding-top: 32px;
