@@ -1,23 +1,20 @@
 import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
+import axios from 'axios'
 
 const categoriesData = ref("https://nordbo-6be70-default-rtdb.europe-west1.firebasedatabase.app/")
 
 
 export const categoryStore = defineStore('category', {
-    state: () => {
-        return {
-            dataObj: ['hah']
-        }
-    },
-    actions: {
-        getData() {
-            fetch("https://nordbo-6be70-default-rtdb.europe-west1.firebasedatabase.app" + '/' + '.json')
-                .then(response => response.json())
-                .then(response => dataObj.push(response));
-            //console.log(dataObj)
-
-        }
+    state: async () => ({
+        dataObj: [],
+    }),
+    actions: {        
+      async fetchUsers() {
+            const data = await axios.get('https://nordbo-6be70-default-rtdb.europe-west1.firebasedatabase.app/.json')
+            this.dataObj = data.data
+            //console.log(this.dataObj)
+      }
     }
 })
 

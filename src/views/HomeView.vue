@@ -12,9 +12,9 @@ import StepByStep from '@/components/UI/StepByStep.vue'
 
 
 
-
+  <Suspense>
   <CategoryCard />
- 
+ </Suspense>
 
 </template>
 

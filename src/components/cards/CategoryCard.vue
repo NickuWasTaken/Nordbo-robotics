@@ -1,46 +1,26 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue'
 import NextButton from '@/components/UI/NextButton.vue'
+import data from '@/assets/data/categories.json'
 
 import {categoryStore} from '@/stores/data.js'
 
 import { ref, computed, reactive, onMounted } from 'vue'
+import axios from 'axios'
 
 const test = categoryStore()
-test.getData()
-console.log(test.dataObj)
+
+const axiosResponse = await axios.get('https://nordbo-6be70-default-rtdb.europe-west1.firebasedatabase.app/.json')
 
 
+onMounted(() => {
+    test.fetchUsers();
+});
 
-var products = reactive([{
-        "id": 1,
-        "name": "Sanding",
-        "description": "Best choice for wood and composites – but other joysticks/handles can be used for other industries to adapt",
-        "image": "../src/assets/images/sandingRobot.png",
-        "active": false,
-    },
-    {
-       "id": 2,
-       "name": "Grinding",
-       "description": "These robots are equipped with specialized tools to perform precise and consistent process on different types of surfaces.",
-       "image": "../src/assets/images/sandingRobot.png",
-        "active": false,
-    },
-    {
-       "id": 3,
-       "name": "Finishing",
-       "description": "Robot finishing involve the use of robotic systems to perform tasks, such as polishing, buffing, and sanding in industries.",
-       "image": "../src/assets/images/sandingRobot.png",
-        "active": false,
-    },
-    {
-       "id": 4,
-       "name": "Deburring",
-       "description": "Robot deburring refer to the use of robotic systems to remove unwanted burrs, sharp edges, and other imperfections.",
-       "image": "../src/assets/images/sandingRobot.png",
-        "active": false,
-    }
-])
+console.log(axiosResponse.data)
+
+var products = reactive(test.dataObj)
+console.log(data)
 
 let active = ref(false)
 
