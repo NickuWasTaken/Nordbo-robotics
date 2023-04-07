@@ -19,8 +19,7 @@
 </template>
   
 <script setup>
-import { RouterView } from 'vue-router'
-import { ref, reactive } from 'vue'
+import { ref } from 'vue'
 import BaseButton from '@/components/UI/BaseButton.vue'
 import SelectionModal from '@/components/UI/SelectionModal.vue'
 
