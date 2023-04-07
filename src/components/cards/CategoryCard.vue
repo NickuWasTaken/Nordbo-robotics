@@ -1,7 +1,6 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue'
 import NextButton from '@/components/UI/NextButton.vue'
-import SearchBar from '@/components/UI/SearchBar.vue'
 
 import { ref, computed, reactive, onMounted } from 'vue'
 
