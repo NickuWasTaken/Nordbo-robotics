@@ -49,17 +49,18 @@
     i++
   }
   productTypeData[id-1].active = !productTypeData[id-1].active  
-  console.log(productTypeData[id].active)
-  
+  /*
   setTimeout(() => {
     scrollBottom()
   }, 100)
+  */
 }
 
 const scrollBottom = () => {
     let bottom = document.body.scrollHeight;
     window.scrollTo(0, bottom);
 }
+
   </script>
   
   <style lang="scss" scoped>
@@ -67,7 +68,7 @@ const scrollBottom = () => {
     .card__image{
     background: #DFDBD9;
     }
-  }
+  } 
 
   .card {
     display: flex;
