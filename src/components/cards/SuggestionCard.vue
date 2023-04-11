@@ -67,6 +67,10 @@ const closeSolution = () => {
         padding: 100px 40px;
         height: 460px;
         background: var(--color-background-soft);
+
+        img{
+            width: 100%;
+        }
     }
 
     &__content {
