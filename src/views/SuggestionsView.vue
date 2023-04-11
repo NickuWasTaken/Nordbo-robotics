@@ -10,6 +10,9 @@ import BaseButton from "@/components/UI/BaseButton.vue";
 
 
 const SavedStates = StateManager();
+SavedStates.$patch({
+		currentView: 3,
+	})
 
 const robotStore = RobotStore();
 

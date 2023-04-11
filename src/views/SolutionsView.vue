@@ -6,7 +6,9 @@ import StepByStep from '@/components/UI/StepByStep.vue'
 import { StateManager } from '@/stores/StateManager.js'
 
 const SavedStates = StateManager();
-
+SavedStates.$patch({
+		currentView: 4,
+	})
 </script>
 
 <template>

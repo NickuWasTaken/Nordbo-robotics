@@ -4,6 +4,7 @@ import  axios  from 'axios';
 export const StateManager = defineStore('savedStates', {
 	state: () => ({
 		currentPage: 1,
+		currentView: 1,
         selectedCategory: 0,
 		selectedCategoryName: 0,
         selectedParameters: [],

@@ -13,6 +13,10 @@ import { StateManager } from '@/stores/StateManager.js'
 
 const SavedStates = StateManager();
 
+SavedStates.$patch({
+		currentView: 2,
+	})
+
 const parameterData = ParameterStore();
 await parameterData.fetchParameterData();
 var parameters = reactive(parameterData.dataObj);

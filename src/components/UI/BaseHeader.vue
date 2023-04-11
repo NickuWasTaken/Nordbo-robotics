@@ -1,10 +1,13 @@
 <template>
   <div class="header-push">
     <header class="header">
-      <div class="header__back-button" :class="{'header__back-button--active': stepProgress}">
+      <div class="header__back-button" v-if="SavedStates.currentView == 1"></div>
+      <router-link :to="previousPage()" v-if="SavedStates.currentView !== 1">
+      <div class="header__back-button" :class="{'header__back-button--active': SavedStates.currentView !== 1}">
         <img src="@/assets/icons/arrow.png" alt="" />
         <p>Back</p>
       </div>
+    </router-link>
       <img src="@/assets/logo.png" alt="" @click="" class="header__logo">
       <caption>Application tool 1.0</caption>
     </header>
@@ -12,7 +15,28 @@
   </template>
   
   <script setup>
-  defineProps(['stepProgress'])
+import { StateManager } from '@/stores/StateManager.js'
+const SavedStates = StateManager();
+
+const myFunction = () => {
+    console.log(SavedStates.currentView);
+};
+
+setInterval(myFunction, 2000);
+
+const previousPage = () => {
+  if (SavedStates.currentView == 2){
+    return '/'
+  }
+  if (SavedStates.currentView == 3){
+    return '/parameters'
+  }
+  if (SavedStates.currentView == 4){
+    return '/suggestions'
+  } else {
+    return '/'
+  }
+}
   </script>
   
   <style lang="scss" scoped>
@@ -38,6 +62,7 @@
     }
   
   &__back-button {
+    grid-area: a;
       display: flex;
       opacity: 0;
       align-items: center;
@@ -45,9 +70,11 @@
       img {
         height: 15px;
         display: inline-block;
+        grid-area: b;
       }
   
       p {
+        grid-area: c;
         margin-left: 16px;
         display: inline-block;
         color: var(--color-text-soft);
