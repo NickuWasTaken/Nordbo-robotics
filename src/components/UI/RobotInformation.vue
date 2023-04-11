@@ -20,16 +20,20 @@ parametersData: {},
 
 console.log("id:" + props.parametersData.id);
 
+const log = async () => {
+  console.log(test)
+}
+let test = reactive(1)
 
 </script>
 
 <template>
-  <form class="wrapper" v-if="2 < props.paramtersData.id">
+  <form class="wrapper" v-show="test >= props.parametersData.id ">
     <div class="production-type"  >
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
       <p class="production-type__description"><div class="description-text" >{{ props.parametersData.describtion}}</div> </p>
-      <form @click="scrollBottom()" action="">
-        <RobotInformationCard @CheckedButton=" active = true, next = true  "  v-for="features in props.parametersData.features" :key="features.id"
+      <form  action="">
+        <RobotInformationCard @CheckedButton=" test++, log() "  v-for="features in props.parametersData.features" :key="features.id"
       :parameterFeature="features" />  </form>
     </div>
     <RouterLink to="suggestions"><NextButton  v-if="next"/></RouterLink>
