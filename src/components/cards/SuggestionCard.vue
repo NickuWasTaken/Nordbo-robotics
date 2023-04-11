@@ -4,16 +4,16 @@
             <img :src="`/images/${productImage}.png`" alt="" />
         </div>
         <div class="card__content">
-            <h4 class="card__content__heading">{{ props.productData.productName }}</h4>
-            <p class="card__content__describtion">{{ props.productData.productDesc }}</p>
+            <h4 class="card__content__heading">{{ props.productData.name }}</h4>
+            <p class="card__content__describtion">{{ props.productData.desc }}</p>
             <BaseButton @checkedButton=" selectSolution(props.productData.id)" />
         </div>
     </section>
     <teleport to='body'>
         <SelectionModal v-if="productSelected" :categoryType="props.productData.productType"
-            :productDetails="props.productData.productDetails" :productImage="props.productData.productImage"
-            :productName="props.productData.productName" :productPros="props.productData.productPros"
-            :productCons="props.productData.productCons" @closeModal="closeSolution"
+            :productDetails="props.productData.desc" :productImage="props.productData.image"
+            :productName="props.productData.name" :productPros="props.productData.pros"
+            :productCons="props.productData.cons" @closeModal="closeSolution"
            />
     </teleport>
 </template>
@@ -23,7 +23,7 @@ import { ref } from 'vue'
 import BaseButton from '@/components/UI/BaseButton.vue'
 import SelectionModal from '@/components/UI/SelectionModal.vue'
 
-const productImage = ref(props.productData.productImage)
+const productImage = ref(props.productData.image)
 
 const props = defineProps({
     productData: {}

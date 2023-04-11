@@ -1,20 +1,26 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import { reactive } from 'vue'
 import SuggestionCard from '@/components/cards/SuggestionCard.vue'
-import TypeCard from '@/components/cards/TypeCard.vue'
-import productData from '@/assets/data.json'
 import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 import StepByStep from '@/components/UI/StepByStep.vue'
+
+import { RobotStore } from '@/stores/RobotData.js';
+
+const robotStore = RobotStore();
+
+await robotStore.fetchRobotData();
+
+var productData = reactive(robotStore.dataObj);
 
 </script>
 
 <template nativeOnScroll="centerModal">
-      <StepByStep progress="3"/>
+    <StepByStep progress="3" />
     <HeadlineHeader>Suggestions</HeadlineHeader>
     <div class="wrapper">
-         <SuggestionCard v-for="product in productData" :product-data="product"/>
+            <SuggestionCard v-for="product in productData" :product-data="product" :key="product.id"/>
     </div>
-
 </template>
 
 <style scoped>

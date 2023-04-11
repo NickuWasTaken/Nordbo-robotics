@@ -1,11 +1,10 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue';
 import NextButton from '@/components/UI/NextButton.vue';
-import data from '@/assets/data/categories.json';
 
-import { categoryStore } from '@/stores/data.js';
+import { categoryStore } from '@/stores/CategoryData.js';
 
-import { ref, computed, reactive, onMounted } from 'vue';
+import { ref, computed, reactive } from 'vue';
 
 const test = categoryStore();
 
