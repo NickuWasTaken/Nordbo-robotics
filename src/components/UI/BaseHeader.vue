@@ -8,7 +8,7 @@
         <p>Back</p>
       </div>
     </router-link>
-      <img src="@/assets/logo.png" alt="" @click="" class="header__logo">
+      <img src="@/assets/logo.png" alt="" class="header__logo">
       <caption>Application tool 1.0</caption>
     </header>
     </div>
