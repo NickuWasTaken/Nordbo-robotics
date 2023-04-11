@@ -9,6 +9,7 @@
             <BaseButton @checkedButton=" selectSolution(props.productData.id)" />
         </div>
     </section>
+
     <teleport to='body'>
         <SelectionModal v-if="productSelected" :categoryType="props.productData.productType"
             :productDetails="props.productData.desc" :productImage="props.productData.image"
@@ -18,7 +19,9 @@
              @closeModal="closeSolution"
              @updateSolution="updateSolution()"
            />
+           
     </teleport>
+    
 </template>
   
 <script setup>
@@ -107,4 +110,5 @@ const closeSolution = () => {
         }
     }
 }
+
 </style>
