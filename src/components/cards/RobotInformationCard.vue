@@ -1,27 +1,23 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue'
 
+
+const props = defineProps( { 
+   parameterFeature: {},
+
+})
+
+console.log(props.parameterFeature)
 </script>
 
 
 <template>
 <div class="wrapper">
-    <div class="card-volume">
-        <h3 class="card-volume__header">High Volume</h3>
-        <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
+    <div class="card-volume" >
+        <h3 class="card-volume__header">{{ props.parameterFeature.name }}</h3>
+        <p class="card-volume__description">{{props.parameterFeature.describtion}} </p>
         <BaseButton @CheckedButton="$emit('checkedButton')"/>
     </div>
-    <div class="card-volume">
-        <h3 class="card-volume__header">High Volume</h3>
-        <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
-        <BaseButton @CheckedButton="$emit('checkedButton')"/>
-    </div>
-       <!-- <div class="card-volume">
-        <h3 class="card-volume__header">High Volume</h3>
-        <p class="card-volume__description">Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more </p>
-        <BaseButton @CheckedButton="$emit('checkedButton')"/>
-    </div> -->
-
 </div>
 
 
@@ -46,9 +42,10 @@ import BaseButton from '@/components/UI/BaseButton.vue'
         width: 590px;
         background: #FFFFFF;
         border-radius: 12px;
+        margin-bottom: 20px;
     
     &__header{
-        width: 162px;
+        // width: 162px;
         font-family: 'Roboto';
         font-weight: 700;
         font-size: 28px;
@@ -66,8 +63,10 @@ import BaseButton from '@/components/UI/BaseButton.vue'
         line-height: 24px;
         color: #000000;
         padding-bottom: 16px;
+        height: 80px;
         
     }
+
  }
     
 }
