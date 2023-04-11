@@ -1,98 +1,76 @@
-[
-  {
-    "id": 1,
-    "name": "features",
-    "describtion": "text",
-    "features": [
-      {
-        "id": 1,
-        "name": "Point to Point",
-        "describtion": "text"
-      },
-      {
+[{
         "id": 2,
-        "name": "Program building",
-        "describtion": "text"
-      },
-      {
+        "name": "features",
+        "describtion": "Corned beef pork belly cupim cow picanha, pancetta shankle drumstick burgdoggen shoulder frankfurter bacon beef jowl prosciutto. Swine sirloin shankle, shoulder cupim pork loin ribeye alcatra shank sausage ",
+        "features": [{
+                "id": 1,
+                "name": "Point to Point",
+                "describtion": "Ham hock ham buffalo ground round. Turkey sirloin pastrami, kielbasa brisket buffalo picanha meatball bresaola cupim burgdoggen t-bone ribeye. Filet mignon fatback doner boudin meatball porchetta strip"
+            },
+            {
+                "id": 2,
+                "name": "Program building",
+                "describtion": "Drumstick picanha andouille, beef ribs prosciutto leberkas pork loin alcatra sausage fatback ham shoulder."
+            },
+            {
+                "id": 3,
+                "name": "Force Control",
+                "describtion": "Landjaeger jowl hamburger, chislic corned beef fatback pork tenderloin jerky short ribs."
+            },
+            {
+                "id": 4,
+                "name": "Path simulation",
+                "describtion": "Prosciutto kielbasa buffalo, beef chislic beef ribs ground round swine ham hock pork loin fatback. Landjaeger biltong pig boudin turducken capicola."
+            }
+
+        ]
+    },
+    {
         "id": 3,
-        "name": "Force Control",
-        "describtion": "text"
-      },
-      {
+        "name": "Prodution Type",
+        "describtion": "When choosing the right production type for a collaborative robot, it is important to consider the specific needs and requirements of the production environment. Collaborative robots are designed to work alongside humans, and they can be used for both high-volume and low-volume production.",
+        "features": [{
+                "id": 1,
+                "name": "low mix, high vol",
+                "describtion": "High-volume production typically involves producing large quantities of the same product or performing the same task repeatedly"
+            },
+            {
+                "id": 2,
+                "name": "high mix, low vol",
+                "describtion": "Low-volume production involves producing small batches of products with high levels of customization and flexibility"
+            }
+        ]
+    },
+    {
         "id": 4,
-        "name": "Path simulation",
-        "describtion": "text"
-      }
-      
-    ]
-  },
-  {
-    "id": 2,
-    "name": "Robot Type",
-    "describtion": "text",
-    "features": [
-      {
-        "id": 1,
-        "name": "Industrial",
-        "describtion": "text"
-      },
-      {
-        "id": 2,
-        "name": "Collaborative",
-        "describtion": "text"
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "name": "Prodution Type",
-    "describtion": "text",
-    "features": [
-      {
-        "id": 1,
-        "name": "low mix, high vol",
-        "describtion": "text"
-      },
-      {
-        "id": 2,
-        "name": "high mix, low vol",
-        "describtion": "text"
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "name": "Ease of Use",
-    "describtion": "text",
-    "features": [
-      {
-        "id": 1,
-        "name": "Custom Joystick",
-        "describtion": "text"
-      },
-      {
-        "id": 2,
-        "name": "Tactile/visual Feedback",
-        "describtion": "text"
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "name": "Precision",
-    "describtion": "text",
-    "features": [
-      {
-        "id": 1,
-        "name": "High",
-        "describtion": "text"
-      },
-      {
-        "id": 2,
-        "name": "Medium",
-        "describtion": "text"
-      }
-    ]
-  }
+        "name": "Ease of Use",
+        "describtion": "Sirloin bacon ham hock buffalo shoulder pork belly hamburger chuck swine shankle pig fatback capicola rump. Porchetta biltong cow fatback. Pork frankfurter filet mignon",
+        "features": [{
+                "id": 1,
+                "name": "Custom Joystick",
+                "describtion": "Chislic andouille doner ground round rump strip steak shank alcatra pork chop turkey corned beef"
+            },
+            {
+                "id": 2,
+                "name": "Tactile/visual Feedback",
+                "describtion": "Tenderloin filet mignon. Sausage shoulder hamburger, ham doner leberkas landjaeger pork belly short ribs"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Precision",
+        "describtion": "When choosing between a high precision or medium precision robot, it's important to consider the specific needs and requirements of the application.",
+        "features": [{
+                "id": 1,
+                "name": "High",
+                "describtion": "High precision robots are typically more expensive but offer greater accuracy and repeatability, making them ideal for tasks that require extreme precision"
+            },
+            {
+                "id": 2,
+                "name": "Medium",
+                "describtion": "Medium precision robots are more affordable and offer sufficient accuracy for a wide range of applications, including assembly, material handling, and packaging."
+            }
+        ]
+    }
 ]

@@ -27,7 +27,8 @@ let robotInformationCheck = ref(false)
   <div class="type-card-wrapper">
     <TypeCard @activateNext="robotInformationCheck = true"/>
   </div>
-  <RobotInformation v-if="robotInformationCheck" :parametersData="parameters" />
+  <div class="parameter-wrapper">  <RobotInformation v-if="robotInformationCheck" :parametersData="parameter" v-for="parameter in parameters" :key="parameter.id" />
+</div>
 </template>
 
 <style scoped>
@@ -39,6 +40,7 @@ let robotInformationCheck = ref(false)
   max-width: 1240px;
   margin-bottom: 60px;
 }
+
 </style>
 
    
