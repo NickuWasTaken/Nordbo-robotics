@@ -1,4 +1,4 @@
-<script setup>
+<script setup async>
 import RobotInformationCard from "@/components/cards/RobotInformationCard.vue";
 import { ref, computed, reactive, onMounted } from "vue";
 import NextButton from "@/components/UI/NextButton.vue";
@@ -12,15 +12,19 @@ let next = ref(false);
 //     window.scrollTo(0, bottom);
 // }
 
-const props = defineProps({
-  parametersData: {},
+
+
+const props =  defineProps( {
+parametersData: {},
 });
 
-console.log(props.parametersData);
+console.log("id:" + props.parametersData.id);
+
+
 </script>
 
 <template>
-  <form class="wrapper" >
+  <form class="wrapper" v-if="2 < props.paramtersData.id">
     <div class="production-type"  >
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
       <p class="production-type__description"><div class="description-text" >{{ props.parametersData.describtion}}</div> </p>
