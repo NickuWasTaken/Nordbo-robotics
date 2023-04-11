@@ -5,7 +5,7 @@
         <img src="@/assets/icons/arrow.png" alt="" />
         <p>Back</p>
       </div>
-      <img src="@/assets/logo.png" alt="" @click="stepProgress = !stepProgress" class="header__logo">
+      <img src="@/assets/logo.png" alt="" @click="" class="header__logo">
       <caption>Application tool 1.0</caption>
     </header>
     </div>

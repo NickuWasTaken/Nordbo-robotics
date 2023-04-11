@@ -5,6 +5,21 @@ import NextButton from '@/components/UI/NextButton.vue';
 import { categoryStore } from '@/stores/CategoryData.js';
 
 import { ref, computed, reactive } from 'vue';
+import { StateManager } from '@/stores/StateManager.js'
+
+const SavedStates = StateManager();
+
+const updateStep = () => {
+	SavedStates.$patch({
+		currentPage: 2,
+	})
+}
+
+const updateCategory = (category) => {
+	SavedStates.$patch({
+		selectedCategory: category,
+	})
+}
 
 const test = categoryStore();
 
@@ -36,6 +51,12 @@ const searchFunction = computed(() => {
 		return item.name.toLowerCase().includes(search.value);
 	});
 });
+
+var categoryIdPayload
+
+const setCategoryID = (id) => {
+	categoryIdPayload = id
+}
 </script>
 
 <template>
@@ -48,14 +69,7 @@ const searchFunction = computed(() => {
 		</p>
 		<div class="searchbar">
 			<div class="search-icon"></div>
-			<input
-				v-model="search"
-				type="text"
-				id="robots"
-				name="search"
-				placeholder="Search..."
-				maxlength="15"
-			/>
+			<input v-model="search" type="text" id="robots" name="search" placeholder="Search..." maxlength="15" />
 		</div>
 	</div>
 
@@ -65,9 +79,7 @@ const searchFunction = computed(() => {
 			<div class="card__name">{{ product.name }}</div>
 			<div class="card__text">{{ product.description }}</div>
 			<div @click="scrollBottom()">
-				<BaseButton
-					@CheckedButton="setActiveCard(product.id - 1), (active = true)"
-				/>
+				<BaseButton @CheckedButton="setActiveCard(product.id - 1), (active = true), setCategoryID(product.id)" />
 			</div>
 
 			<div class="checked" v-show="product.active"></div>
@@ -78,9 +90,9 @@ const searchFunction = computed(() => {
 			</div>
 		</div>
 	</div>
-	<RouterLink to="parameters"
-		><NextButton @check="active" v-if="active"
-	/></RouterLink>
+	<RouterLink to="parameters">
+		<NextButton @check="active && updateStep(), updateCategory(categoryIdPayload)" v-if="active" />
+	</RouterLink>
 </template>
 
 <style lang="scss" scoped>
@@ -90,6 +102,7 @@ const searchFunction = computed(() => {
 	justify-content: center;
 	max-width: 1700px;
 	margin: auto;
+
 	.checked {
 		z-index: 6;
 		position: absolute;
@@ -102,6 +115,7 @@ const searchFunction = computed(() => {
 		border-radius: 100%;
 		background-color: white;
 	}
+
 	.card {
 		margin: 20px;
 		align-items: flex-start;
@@ -124,6 +138,7 @@ const searchFunction = computed(() => {
 			color: #02112e;
 			margin-bottom: 10px;
 		}
+
 		&__text {
 			width: 263px;
 			height: 96px;
@@ -135,6 +150,7 @@ const searchFunction = computed(() => {
 			color: rgba(2, 17, 46, 0.5);
 			margin-bottom: 34px;
 		}
+
 		&__image {
 			padding: 10px 27px 148px 255px;
 			position: absolute;
@@ -144,6 +160,7 @@ const searchFunction = computed(() => {
 			top: 0px;
 			border-radius: 0px 10px 10px 0px;
 		}
+
 		&__triangle {
 			position: absolute;
 			width: 300px;
@@ -155,6 +172,7 @@ const searchFunction = computed(() => {
 			border-left: 25px solid transparent;
 			z-index: 2;
 		}
+
 		&__triangle-overlay {
 			z-index: 5;
 			position: absolute;
@@ -167,6 +185,7 @@ const searchFunction = computed(() => {
 			border-left: 25px solid transparent;
 		}
 	}
+
 	img {
 		padding: 0px;
 		gap: 10px;
@@ -188,6 +207,7 @@ const searchFunction = computed(() => {
 .container {
 	margin: auto;
 	max-width: 1200px;
+
 	&__header {
 		width: 590px;
 		height: 44px;
@@ -198,6 +218,7 @@ const searchFunction = computed(() => {
 		color: #02112e;
 		margin-bottom: 0;
 	}
+
 	&__text {
 		margin-top: 16px;
 
@@ -210,6 +231,7 @@ const searchFunction = computed(() => {
 		line-height: 24px;
 		color: #000000;
 	}
+
 	.searchbar {
 		display: flex;
 		border: none;
@@ -221,6 +243,7 @@ const searchFunction = computed(() => {
 		border-radius: 200px;
 		margin: 80px 0;
 		margin-left: -10px;
+
 		input {
 			border: none;
 			background: #f5f5f5;
@@ -230,6 +253,7 @@ const searchFunction = computed(() => {
 			outline: 0;
 			width: 420px;
 		}
+
 		.search-icon {
 			width: 19px;
 			height: 19px;
@@ -239,5 +263,4 @@ const searchFunction = computed(() => {
 			margin: auto;
 		}
 	}
-}
-</style>
+}</style>

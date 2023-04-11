@@ -13,7 +13,10 @@
         <SelectionModal v-if="productSelected" :categoryType="props.productData.productType"
             :productDetails="props.productData.desc" :productImage="props.productData.image"
             :productName="props.productData.name" :productPros="props.productData.pros"
-            :productCons="props.productData.cons" @closeModal="closeSolution"
+            :productCons="props.productData.cons"
+            :selectedProduct="productData"
+             @closeModal="closeSolution"
+             @updateSolution="updateSolution()"
            />
     </teleport>
 </template>
@@ -22,6 +25,22 @@
 import { ref } from 'vue'
 import BaseButton from '@/components/UI/BaseButton.vue'
 import SelectionModal from '@/components/UI/SelectionModal.vue'
+import { StateManager } from '@/stores/StateManager.js'
+
+const updateStep = () => {
+	SavedStates.$patch({
+		currentPage: 4,
+	})
+}
+
+const SavedStates = StateManager();
+const updateSolution = () => {
+    SavedStates.$patch({
+        selectedSolution: props.productData
+    })
+    updateStep()
+    console.log(SavedStates.selectedSolution)
+}
 
 const productImage = ref(props.productData.image)
 
@@ -34,6 +53,7 @@ let productSelected = ref(false);
 const selectSolution = (productId) => {
     productSelected.value = false;
     productSelected.value = true;
+    updateSolution()
     setTimeout(() => {
         document.getElementById('modal-wrap').style.top = window.scrollY+'px'
 }, 10);

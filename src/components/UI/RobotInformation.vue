@@ -1,7 +1,8 @@
 <script setup async>
 import RobotInformationCard from "@/components/cards/RobotInformationCard.vue";
-import { ref, computed, reactive, onMounted } from "vue";
+import { ref, computed, reactive, onMounted, nextTick } from "vue";
 import NextButton from "@/components/UI/NextButton.vue";
+import { getCurrentInstance } from 'vue';
 import BaseButton from "@/components/UI/BaseButton.vue";
 
 let active = ref(false);
@@ -13,6 +14,11 @@ let next = ref(false);
 // }
 
 
+const renderComponent = ref(true);
+
+const log = () => {
+console.log(test)
+}
 
 const props =  defineProps( {
 parametersData: {},
@@ -20,20 +26,18 @@ parametersData: {},
 
 console.log("id:" + props.parametersData.id);
 
-const log = async () => {
-  console.log(test)
-}
-let test = reactive(1)
+let test = reactive(0)
+let parameterID = reactive(props.parametersData.id)
 
 </script>
 
 <template>
-  <form class="wrapper" v-show="test >= props.parametersData.id ">
+  <form class="wrapper" v-if="test >= parameterID">
     <div class="production-type"  >
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
-      <p class="production-type__description"><div class="description-text" >{{ props.parametersData.describtion}}</div> </p>
+      <p class="production-type__description"><div class="description-text" >{{ props.parametersData.describtion}} </div> </p>
       <form  action="">
-        <RobotInformationCard @CheckedButton=" test++, log() "  v-for="features in props.parametersData.features" :key="features.id"
+        <RobotInformationCard @CheckedButton="test++, log()"  v-for="features in props.parametersData.features" :key="features.id"
       :parameterFeature="features" />  </form>
     </div>
     <RouterLink to="suggestions"><NextButton  v-if="next"/></RouterLink>

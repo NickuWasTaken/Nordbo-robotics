@@ -1,39 +1,39 @@
 <template>
     <div>
         <ul class="steps">
-            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 1 }">
+            <li class="steps__step" :class="{ 'steps__step--inactive': SavedStates.currentPage < 1 }">
                 <div class="steps__step__circle"
-                    :class="{ 'steps__step__circle--active': props.progress == 1, 'steps__step__circle--completed': props.progress > 1 }">
-                    <p v-if="props.progress <= 1">1</p>
-                    <RouterLink to="/" v-if="props.progress > 1"> </RouterLink>
+                    :class="{ 'steps__step__circle--active': SavedStates.currentPage == 1, 'steps__step__circle--completed': SavedStates.currentPage > 1 }">
+                    <p v-if="SavedStates.currentPage <= 1">1</p>
+                    <RouterLink to="/" v-if="SavedStates.currentPage >= 1"> </RouterLink>
                 </div>
                 <p>Application</p>
-                <hr v-if="props.progress > 1">
+                <hr v-if="SavedStates.currentPage > 1">
             </li>
 
-            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 2 }">
+            <li class="steps__step" :class="{ 'steps__step--inactive': SavedStates.currentPage < 2 }">
                 <div class="steps__step__circle"
-                    :class="{ 'steps__step__circle--active': props.progress == 2, 'steps__step__circle--completed': props.progress > 2 }">
-                    <p v-show="props.progress <= 2">2</p>
-                    <RouterLink to="/parameters" v-if="props.progress > 2"> </RouterLink>
+                    :class="{ 'steps__step__circle--active': SavedStates.currentPage == 2, 'steps__step__circle--completed': SavedStates.currentPage > 2 }">
+                    <p v-show="SavedStates.currentPage <= 2">2</p>
+                    <RouterLink to="/parameters" v-if="SavedStates.currentPage >= 2"> </RouterLink>
                 </div>
                 <p>Parameters</p>
-                <hr v-if="props.progress > 2">
+                <hr v-if="SavedStates.currentPage > 2">
             </li>
-            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 3 }">
+            <li class="steps__step" :class="{ 'steps__step--inactive': SavedStates.currentPage < 3 }">
                     <div class="steps__step__circle"
-                        :class="{ 'steps__step__circle--active': props.progress == 3, 'steps__step__circle--completed': props.progress > 3 }">
-                        <p v-if="props.progress <= 3">3</p>
-                        <RouterLink to="/suggestions" v-if="props.progress > 3"> </RouterLink>
+                        :class="{ 'steps__step__circle--active': SavedStates.currentPage == 3, 'steps__step__circle--completed': SavedStates.currentPage > 3 }">
+                        <p v-if="SavedStates.currentPage <= 3">3</p>
+                        <RouterLink to="/suggestions" v-if="SavedStates.currentPage >= 3"> </RouterLink>
                     </div>
                 <p>Suggestion</p>
-                <hr v-if="props.progress > 3">
+                <hr v-if="SavedStates.currentPage > 3">
             </li>
-            <li class="steps__step" :class="{ 'steps__step--inactive': props.progress < 4 }">
+            <li class="steps__step" :class="{ 'steps__step--inactive': SavedStates.currentPage < 4 }">
                 <div class="steps__step__circle"
-                    :class="{ 'steps__step__circle--active': props.progress == 4, 'steps__step__circle--completed': props.progress > 4 }">
-                    <p v-if="props.progress <= 4">4</p>
-                    <RouterLink to="/solution"  v-if="props.progress > 4"> </RouterLink>
+                    :class="{ 'steps__step__circle--active': SavedStates.currentPage == 4, 'steps__step__circle--completed': SavedStates.currentPage > 4 }">
+                    <p v-if="SavedStates.currentPage <= 4">4</p>
+                    <RouterLink to="/solution"  v-if="SavedStates.currentPage >= 4"> </RouterLink>
                 </div>
                 <p>Solution</p>
             </li>
@@ -44,8 +44,12 @@
 
 <script setup>
 import { RouterLink } from 'vue-router'
+import { StateManager } from '@/stores/StateManager.js'
 
 const props = defineProps(['progress'])
+
+const SavedStates = StateManager();
+
 
 </script>
 

@@ -4,6 +4,8 @@ import CategoryCard from '@/components/cards/CategoryCard.vue'
 import RobotInformation from '@/components/UI/RobotInformation.vue'
 import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 import BaseHeader from '@/components/UI/BaseHeader.vue'
+
+
 </script>
 
 <template>

@@ -10,11 +10,16 @@ Kald:
 */
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue';
+import { StateManager } from '@/stores/StateManager.js'
 
-const objPros = props.productPros;
-const objCons = props.productCons;
+const SavedStates = StateManager();
+await SavedStates.fetchCategoryName()
 
 const props = defineProps({
+    robotId :{
+        type: Number,
+        default: 1
+    },
     categoryType: {
         type: String,
         default: 'sanding',
@@ -59,8 +64,8 @@ const productImage = ref(props.productImage)
                 </header>
                 <div class="modal__info__wrap">
                     <div class="modal__info__product">
-                        <caption>
-                            {{ props.categoryType }}
+                        <caption @click="updateSolution()">
+                            {{ SavedStates.selectedCategoryName }}
                         </caption>
                         <h1>{{ props.productName }}</h1>
                         <p>{{ props.productDetails }}</p>
@@ -81,7 +86,7 @@ const productImage = ref(props.productImage)
                         </li>
                     </ul>
                 </div>
-                <RouterLink to="/solution"><a class="modal__info__button">Select</a></RouterLink>
+                <RouterLink to="/solution"><a class="modal__info__button" @click="$emit('updateSolution') && updateStep()">Select</a></RouterLink>
 
             </main>
         </section>

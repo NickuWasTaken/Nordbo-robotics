@@ -8,18 +8,22 @@ import HeadlineHeader from "@/components/UI/HeadlineHeader.vue";
 import TypeCard from "@/components/cards/TypeCard.vue";
 import ParametersSteps from "@/components/UI/ParametersSteps.vue";
 import StepByStep from "@/components/UI/StepByStep.vue";
-
 import { ParameterStore } from "@/stores/ParameterData.js";
+import { StateManager } from '@/stores/StateManager.js'
+
+const SavedStates = StateManager();
 
 const parameterData = ParameterStore();
 await parameterData.fetchParameterData();
 var parameters = reactive(parameterData.dataObj);
 
 let robotInformationCheck = ref(false);
+
+console.log(SavedStates.selectedCategory)
 </script>
 
 <template>
-  <StepByStep progress="2" />
+  <StepByStep :progress="SavedStates.currentPage" />
   <HeadlineHeader>Parameters</HeadlineHeader>
   <ParametersSteps />
   <div class="type-card-wrapper">

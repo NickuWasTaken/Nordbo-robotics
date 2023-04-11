@@ -10,14 +10,13 @@ Kald:
 */
 import { RouterLink } from 'vue-router'
 import { ref } from 'vue';
+import { StateManager } from '@/stores/StateManager.js'
 
-const objPros = props.productPros;
-const objCons = props.productCons;
+const SavedStates = StateManager();
 
 const props = defineProps({
     categoryType: {
-        type: String,
-        default: 'sanding',
+        default: '',
     },
     productImage: {
         type: String,
@@ -37,6 +36,9 @@ const props = defineProps({
     },
     productCons: {
         type: Object,
+    },
+    selectedProduct: {
+        type: Object
     }
 });
 
@@ -54,10 +56,10 @@ const productImage = ref(props.productImage)
                 <div class="solution__info__wrap">
                     <div class="solution__info__product">
                         <caption>
-                            {{ props.categoryType }}
+                            {{ SavedStates.selectedCategoryName }}
                         </caption>
-                        <h1>{{ props.productName }}</h1>
-                        <p>{{ props.productDetails }}</p>
+                        <h1>{{ SavedStates.selectedSolution.name }}</h1>
+                        <p>{{ SavedStates.selectedSolution.desc }}</p>
                     </div>
                 </div>
             </main>
