@@ -6,7 +6,7 @@
         <div class="card__content">
             <h4 class="card__content__heading">{{ props.productData.name }}</h4>
             <p class="card__content__describtion">{{ props.productData.desc }}</p>
-            <BaseButton @checkedButton=" selectSolution()" />
+            <BaseButton @checkedButton=" selectSolution(), centerModal()" />
         </div>
     </section>
 
@@ -54,18 +54,19 @@ const props = defineProps({
 let productSelected = ref(false);
 
 const centerModal = async () => {
-    document.getElementById('modal-wrap').style.top = window.scrollY+'px'
+    setTimeout(
+        document.getElementById('modal-wrap').style.top = window.scrollY+'px', 50
+    )
+    
 }
 
 const selectSolution = async () => {
     productSelected.value = false;
     productSelected.value = true;
     await updateSolution()
-    await centerModal()
     let radios = document.getElementsByTagName('input');
     for (let i = 0; i < radios.length; i++)
         radios[i].checked = false;
-
 }
 
 const closeSolution = () => {
