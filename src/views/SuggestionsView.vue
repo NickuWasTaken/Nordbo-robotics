@@ -20,7 +20,52 @@ await robotStore.fetchRobotData();
 
 var productData = reactive(robotStore.dataObj);
 
-console.log(SavedStates.currentPage)
+const pushSuggestionToPiniaArray = (productId) => {
+    let data = SavedStates.suggestedSolution
+    const ObjData = productId
+    data.push(ObjData)
+    SavedStates.$patch({
+        suggestedSolution: data
+    })
+    setTimeout(
+        console.log(SavedStates.suggestedSolution), 500
+    )
+}
+
+//Loops through Robots
+for (let i = 0; i < productData.length; i++) {
+    console.log(productData[i].name)
+    var fits = 0;
+    var count = 0
+    //Loops through Robots.features
+    for (let n = 0; n < productData[i].features.length; n++) {
+        //Loops through Pinia saved parameters
+        for (let t = 0; t < SavedStates.selectedParameters.length; t++) {
+            console.log('Selected Parameter' + SavedStates.selectedParameters[t].parameter)
+            if (productData[i].features[n].feature === SavedStates.selectedParameters[t].feature && productData[i].features[n].parameter === SavedStates.selectedParameters[t].parameter) {
+                fits++
+            }
+
+        }
+
+    }
+    console.log(productData[i].name + ' passer: ' + fits + 'af de valgte parametre')
+    if (fits === SavedStates.selectedParameters.length) {
+        for (let n = 0; n < productData[i].category.length; n++) {
+            if(SavedStates.selectedCategory === productData[i].category[n])
+            pushSuggestionToPiniaArray(productData[i].id)
+        }
+    }
+}
+
+
+for (let i = 0; i <= SavedStates.suggestedSolution.length; i++) {
+    SavedStates.fetchRobotDataWithId(i, SavedStates.suggestedSolution[i]-1)
+}
+
+const suggestedProducts = reactive(SavedStates.suggestedSolution)
+
+console.log(suggestedProducts)
 
 const search = ref('');
 const searchFunction = computed(() => {
@@ -31,11 +76,14 @@ const searchFunction = computed(() => {
 
 </script>
 
-<template nativeOnScroll="centerModal">
+<template>
     <StepByStep :progress="SavedStates.currentPage" />
     <HeadlineHeader>Suggestions</HeadlineHeader>
     <div class="wrapper">
-        <SuggestionCard v-for="product in searchFunction" :product-data="product" :key="product.id" />
+        <SuggestionCard v-for="suggestedProduct in suggestedProducts" :product-data="suggestedProduct" :key="suggestedProduct.id"
+         />
+        <!-- <SuggestionCard v-for="product in searchFunction" :product-data="product" :key="product.id"
+         /> -->
     </div>
     <p>End of results.</p>
     <p>If none of the results satisfy the client need, try a new search or restart the application tool process.</p>

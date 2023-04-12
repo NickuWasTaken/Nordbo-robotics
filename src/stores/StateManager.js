@@ -8,7 +8,7 @@ export const StateManager = defineStore('savedStates', {
         selectedCategory: 0,
 		selectedCategoryName: 0,
         selectedParameters: [],
-            /* Spørg kenneth? */
+        suggestedSolution: [],
         selectedSolution: {}
 	}),
 	actions: {
@@ -19,5 +19,11 @@ export const StateManager = defineStore('savedStates', {
             );
             this.selectedCategoryName = response.data.name;
         },
+        async fetchRobotDataWithId(arrayId,id) {
+			let response = await axios.get(
+				'https://nordbo-robotter-default-rtdb.europe-west1.firebasedatabase.app/'+id+'.json'
+			);
+			this.suggestedSolution[arrayId] = response.data;
+		},
     },
 });

@@ -10,7 +10,7 @@
       <div class="card__content">
         <h4 class="card__content__header">{{ card.name }}</h4>
         <p class="card__content__paragraph">{{ card.describtion }}</p>
-        <BaseButton @checkedButton="setActiveCard(card.id), $emit('activateNext')"/>
+        <BaseButton @checkedButton="setActiveCard(card.id), pushFeatureToPiniaArray(1, card.id), $emit('activateNext')"/>
       </div>
     </div>
   </div>
@@ -19,11 +19,21 @@
   <script setup>
   import { ref, reactive } from 'vue'
   import BaseButton from '@/components/UI/BaseButton.vue'
+  import { StateManager } from '@/stores/StateManager.js'
 
-  let active = ref(false);
+const SavedStates = StateManager()
 
-  const props = defineProps({
-  })
+  const pushFeatureToPiniaArray = (featureId, parameterId) => {
+  let data = SavedStates.selectedParameters
+  const ObjData = { feature: featureId, parameter: parameterId}
+  data[0] = ObjData
+  SavedStates.$patch({
+		selectedParameters: data
+	})
+  setTimeout(
+    console.log(SavedStates.selectedParameters), 500
+  )
+}
 
   const productTypeData = reactive([
     {

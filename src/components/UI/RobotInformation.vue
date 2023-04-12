@@ -16,7 +16,7 @@ let next = ref(false);
 const pushFeatureToPiniaArray = (featureId, parameterId) => {
   let data = SavedStates.selectedParameters
   const ObjData = { feature: featureId, parameter: parameterId}
-  data[featureId] = ObjData
+  data[featureId-1] = ObjData
   SavedStates.$patch({
 		selectedParameters: data
 	})
@@ -45,11 +45,11 @@ let parameterID = reactive(props.parametersData.id)
       </p>
       <form action="">
         <RobotInformationCard @CheckedButton=" pushFeatureToPiniaArray(props.parametersData.id, features.id)" v-for="features in props.parametersData.features"
-          :key="features.id" :parameterFeature="features" />
+          :key="features.id" :parameterFeature="features"/>
       </form>
     </div>
     <RouterLink to="suggestions">
-      <NextButton v-if="next" />
+      <NextButton />
     </RouterLink>
   </form>
 </template>
