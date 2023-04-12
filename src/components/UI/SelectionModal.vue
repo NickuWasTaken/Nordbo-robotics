@@ -73,14 +73,14 @@ const productImage = ref(props.productImage)
 
                     <ul class="modal__info__pros">
                         <h2>Pros</h2>
-                        <li v-for="pro in objPros" :key="pro">
+                        <li v-for="pro in props.productPros" :key="pro">
                             <div class="pro-list-icon"></div>
                             <p>{{ pro.desc }}</p>
                         </li>
                     </ul>
                     <h2>Cons</h2>
                     <ul class="modal__info__cons">
-                        <li v-for="con in objCons" :key="con">
+                        <li v-for="con in props.productCons" :key="con">
                             <div class="con-list-icon"></div>
                             <p>{{ con.desc }}</p>
                         </li>

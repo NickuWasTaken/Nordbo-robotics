@@ -59,11 +59,11 @@ for (let i = 0; i < productData.length; i++) {
 }
 
 
-for (let i = 0; i <= SavedStates.suggestedSolution.length; i++) {
+for (let i = 0; i < SavedStates.suggestedSolution.length; i++) {
     SavedStates.fetchRobotDataWithId(i, SavedStates.suggestedSolution[i]-1)
 }
 
-const suggestedProducts = reactive(SavedStates.suggestedSolution)
+const suggestedProducts = SavedStates.suggestedSolution
 
 console.log(suggestedProducts)
 
