@@ -12,6 +12,7 @@ const SavedStates = StateManager();
 		currentView: 1,
 	})
 
+  window.scrollTo(0, 0);
 </script>
 
 <template>

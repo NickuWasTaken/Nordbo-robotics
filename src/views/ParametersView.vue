@@ -17,6 +17,8 @@ SavedStates.$patch({
 		currentView: 2,
 	})
 
+  window.scrollTo(0, 0);
+
 const parameterData = ParameterStore();
 await parameterData.fetchParameterData();
 var parameters = reactive(parameterData.dataObj);

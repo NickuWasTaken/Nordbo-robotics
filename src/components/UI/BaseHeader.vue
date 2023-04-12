@@ -18,12 +18,6 @@
 import { StateManager } from '@/stores/StateManager.js'
 const SavedStates = StateManager();
 
-const myFunction = () => {
-    console.log(SavedStates.currentView);
-};
-
-setInterval(myFunction, 2000);
-
 const previousPage = () => {
   if (SavedStates.currentView == 2){
     return '/'

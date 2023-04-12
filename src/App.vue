@@ -2,7 +2,6 @@
 import { RouterLink, RouterView } from 'vue-router'
 import BaseHeader from '@/components/UI/BaseHeader.vue'
 
-
 </script>
 
 <template>

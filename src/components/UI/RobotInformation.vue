@@ -1,11 +1,11 @@
 <script setup async>
 import RobotInformationCard from "@/components/cards/RobotInformationCard.vue";
-import { ref, computed, reactive, onMounted, nextTick } from "vue";
+import { ref, reactive } from "vue";
 import NextButton from "@/components/UI/NextButton.vue";
-import { getCurrentInstance } from 'vue';
-import BaseButton from "@/components/UI/BaseButton.vue";
+import { StateManager } from '@/stores/StateManager.js'
 
-let active = ref(false);
+const SavedStates = StateManager()
+
 let next = ref(false);
 
 // const scrollBottom = () => {
@@ -13,15 +13,20 @@ let next = ref(false);
 //     window.scrollTo(0, bottom);
 // }
 
-
-const renderComponent = ref(true);
-
-const log = () => {
-console.log(test)
+const pushFeatureToPiniaArray = (featureId, parameterId) => {
+  let data = SavedStates.selectedParameters
+  const ObjData = { feature: featureId, parameter: parameterId}
+  data[featureId] = ObjData
+  SavedStates.$patch({
+		selectedParameters: data
+	})
+  setTimeout(
+    console.log(SavedStates.selectedParameters), 500
+  )
 }
 
-const props =  defineProps( {
-parametersData: {},
+const props = defineProps({
+  parametersData: {},
 });
 
 console.log("id:" + props.parametersData.id);
@@ -32,33 +37,42 @@ let parameterID = reactive(props.parametersData.id)
 </script>
 
 <template>
-  <form class="wrapper" v-if="test >= parameterID">
-    <div class="production-type"  >
+  <form class="wrapper">
+    <div class="production-type">
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
-      <p class="production-type__description"><div class="description-text" >{{ props.parametersData.describtion}} </div> </p>
-      <form  action="">
-        <RobotInformationCard @CheckedButton="test++, log()"  v-for="features in props.parametersData.features" :key="features.id"
-      :parameterFeature="features" />  </form>
+      <p class="production-type__description">
+      <div class="description-text">{{ props.parametersData.describtion }} </div>
+      </p>
+      <form action="">
+        <RobotInformationCard @CheckedButton=" pushFeatureToPiniaArray(props.parametersData.id, features.id)" v-for="features in props.parametersData.features"
+          :key="features.id" :parameterFeature="features" />
+      </form>
     </div>
-    <RouterLink to="suggestions"><NextButton  v-if="next"/></RouterLink>
+    <RouterLink to="suggestions">
+      <NextButton v-if="next" />
+    </RouterLink>
   </form>
 </template>
 
 <style lang="scss" scoped>
 .wrapper {
   margin: 0 auto;
+
   .description-text {
     width: 900px;
   }
+
   form {
     display: flex;
     width: 1280px;
     margin: auto;
     flex-wrap: wrap;
   }
+
   #precision {
     background-color: white;
   }
+
   .production-type {
     padding: auto;
     gap: 8px;
@@ -95,7 +109,6 @@ let parameterID = reactive(props.parametersData.id)
   }
 }
 
-.wrapper:nth-child(even) .production-type{
+.wrapper:nth-child(even) .production-type {
   background-color: white;
-}
-</style>
+}</style>

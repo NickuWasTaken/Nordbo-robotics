@@ -7,6 +7,7 @@ import StepByStep from '@/components/UI/StepByStep.vue'
 import { RobotStore } from '@/stores/RobotData.js';
 import { StateManager } from '@/stores/StateManager.js'
 
+window.scrollTo(0, 0);
 
 const SavedStates = StateManager();
 SavedStates.$patch({

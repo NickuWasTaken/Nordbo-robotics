@@ -8,6 +8,7 @@ export const StateManager = defineStore('savedStates', {
         selectedCategory: 0,
 		selectedCategoryName: 0,
         selectedParameters: [],
+            /* Spørg kenneth? */
         selectedSolution: {}
 	}),
 	actions: {

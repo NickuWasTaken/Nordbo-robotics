@@ -5,6 +5,8 @@ import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 import StepByStep from '@/components/UI/StepByStep.vue'
 import { StateManager } from '@/stores/StateManager.js'
 
+window.scrollTo(0, 0);
+
 const SavedStates = StateManager();
 SavedStates.$patch({
 		currentView: 4,
