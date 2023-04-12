@@ -1,4 +1,20 @@
 [{
+        "id": 1,
+        "name": "robot type",
+        "describtion": "Corned beef pork belly cupim cow picanha, pancetta shankle drumstick burgdoggen shoulder frankfurter bacon beef jowl prosciutto. Swine sirloin shankle, shoulder cupim pork loin ribeye alcatra shank sausage ",
+        "features": [{
+                "id": 1,
+                "name": "Industrial",
+                "describtion": "Ham hock ham buffalo ground round. Turkey sirloin pastrami, kielbasa brisket buffalo picanha meatball bresaola cupim burgdoggen t-bone ribeye. Filet mignon fatback doner boudin meatball porchetta strip"
+            },
+            {
+                "id": 2,
+                "name": "collborative",
+                "describtion": "Drumstick picanha andouille, beef ribs prosciutto leberkas pork loin alcatra sausage fatback ham shoulder."
+            }
+
+        ]
+    }, {
         "id": 2,
         "name": "features",
         "describtion": "Corned beef pork belly cupim cow picanha, pancetta shankle drumstick burgdoggen shoulder frankfurter bacon beef jowl prosciutto. Swine sirloin shankle, shoulder cupim pork loin ribeye alcatra shank sausage ",

@@ -111,4 +111,12 @@ let parameterID = reactive(props.parametersData.id)
 
 .wrapper:nth-child(even) .production-type {
   background-color: white;
-}</style>
+  
+}
+
+
+.wrapper:nth-child(1) .production-type {
+  display: none;
+  
+}
+</style>
