@@ -21,6 +21,13 @@ const updateCategory = (category) => {
 	})
 }
 
+const resetParameters = () => {
+	SavedStates.$patch({
+		selectedParameters: [],
+		suggestedSolution: []
+	})
+}
+
 const test = categoryStore();
 
 await test.fetchCategoryData();
@@ -91,7 +98,7 @@ const setCategoryID = (id) => {
 		</div>
 	</div>
 	<RouterLink to="parameters">
-		<NextButton @check="active && updateStep(), updateCategory(categoryIdPayload)" v-if="active" />
+		<NextButton @check="active && updateStep(), updateCategory(categoryIdPayload), resetParameters()" v-if="active" />
 	</RouterLink>
 </template>
 
