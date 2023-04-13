@@ -109,7 +109,7 @@ let parameterID = reactive(props.parametersData.id)
   }
 }
 
-.wrapper:nth-child(even) .production-type {
+.wrapper:nth-child(odd) .production-type {
   background-color: white;
   
 }

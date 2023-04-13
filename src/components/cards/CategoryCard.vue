@@ -156,12 +156,14 @@ const setCategoryID = (id) => {
 			position: absolute;
 			width: 293px;
 			height: 308px;
-			left: 304px;
+			left: 290px;
 			top: 0px;
 			border-radius: 0px 10px 10px 0px;
+            
 		}
 
 		&__triangle {
+            
 			position: absolute;
 			width: 300px;
 			height: 308px;
@@ -169,8 +171,9 @@ const setCategoryID = (id) => {
 			top: 0px;
 			border-bottom: 308px solid #dadce3;
 			border-radius: 0px 10px 10px 0px;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 0px;
 			border-left: 25px solid transparent;
-			z-index: 2;
 		}
 
 		&__triangle-overlay {
