@@ -1,5 +1,4 @@
 <script setup async>
-import { RouterLink, RouterView } from "vue-router";
 import { ref, reactive } from "vue";
 import CategoryCard from "@/components/cards/CategoryCard.vue";
 import RobotInformation from "@/components/UI/RobotInformation.vue";
@@ -12,27 +11,31 @@ import { ParameterStore } from "@/stores/ParameterData.js";
 import { StateManager } from '@/stores/StateManager.js'
 import NextButton from '@/components/UI/NextButton.vue'
 
+ window.scrollTo(0, 0);
 const SavedStates = StateManager();
 
+// set progress for back button
 SavedStates.$patch({
 		currentView: 2,
 	})
 
-  window.scrollTo(0, 0);
-
+// saves data in variable 
 const parameterData = ParameterStore();
+// get data from firebase, save data to pinia
 await parameterData.fetchParameterData();
+// save pinia data to variable 
 var parameters = reactive(parameterData.dataObj);
 
+// show next element 
 let robotInformationCheck = ref(false);
 
+// reset suggested solution to pinia 
 const resetSolution = () => {
 	SavedStates.$patch({
 		suggestedSolution: []
 	})
 }
 
-console.log(SavedStates.selectedCategory)
 </script>
 
 <template>

@@ -1,26 +1,34 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue';
 import NextButton from '@/components/UI/NextButton.vue';
-
 import { categoryStore } from '@/stores/CategoryData.js';
-
 import { ref, computed, reactive } from 'vue';
 import { StateManager } from '@/stores/StateManager.js'
 
 const SavedStates = StateManager();
+let active = ref(false);
 
+// sets currentpage
 const updateStep = () => {
 	SavedStates.$patch({
 		currentPage: 2,
 	})
 }
 
+// sets selected category id for updatecategory()
+let categoryIdPayload
+const setCategoryID = (id) => {
+	categoryIdPayload = id
+}
+
+// sends selected category id to pinia 
 const updateCategory = (category) => {
 	SavedStates.$patch({
 		selectedCategory: category,
 	})
 }
 
+// resets parameters when proceeding to next page
 const resetParameters = () => {
 	SavedStates.$patch({
 		selectedParameters: [],
@@ -28,19 +36,22 @@ const resetParameters = () => {
 	})
 }
 
+
+// saves store data in variable 
 const test = categoryStore();
-
+// get data from firebase, save data to pinia
 await test.fetchCategoryData();
-
+// save pinia data to variable 
 var products = reactive(test.dataObj);
 
-let active = ref(false);
-
+// scroll to bottom when clicked category 
 const scrollBottom = () => {
 	let bottom = document.body.scrollHeight;
 	window.scrollTo(0, bottom);
 };
 
+
+// make checked icon ----------------------fix 
 const setActiveCard = (id) => {
 	let i = 0;
 	while (products[i]) {
@@ -48,10 +59,9 @@ const setActiveCard = (id) => {
 		i++;
 	}
 	products[id].active = !products[id].active;
-	//   console.log(products[id].active);
-	//   console.log(id)
 };
 
+// search function category 
 const search = ref('');
 const searchFunction = computed(() => {
 	return products.filter((item) => {
@@ -59,11 +69,8 @@ const searchFunction = computed(() => {
 	});
 });
 
-var categoryIdPayload
 
-const setCategoryID = (id) => {
-	categoryIdPayload = id
-}
+
 </script>
 
 <template>
@@ -191,7 +198,7 @@ const setCategoryID = (id) => {
 			left: 0px;
 			top: 0px;
 			border-bottom: 308px solid rgba(98, 195, 233, 0.5);
-			border-radius: 0px 10px 10px 0px;
+			border-radius: 0px 10px 0 0px;
 			border-left: 25px solid transparent;
 		}
 	}

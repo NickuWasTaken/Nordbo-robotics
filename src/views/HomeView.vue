@@ -5,14 +5,16 @@ import RobotInformation from '@/components/UI/RobotInformation.vue'
 import RobotInformationCard from '@/components/cards/RobotInformationCard.vue'
 import StepByStep from '@/components/UI/StepByStep.vue'
 import { StateManager } from '@/stores/StateManager.js'
-
+  
+window.scrollTo(0, 0);
 const SavedStates = StateManager();
 
+// set progress for back button
 	SavedStates.$patch({
 		currentView: 1,
 	})
 
-  window.scrollTo(0, 0);
+
 </script>
 
 <template>

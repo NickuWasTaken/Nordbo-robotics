@@ -1,5 +1,6 @@
 <script setup>
 
+
 let random = Math.floor(Math.random() * 1000000);
 
 </script>

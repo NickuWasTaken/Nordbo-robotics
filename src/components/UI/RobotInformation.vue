@@ -1,38 +1,32 @@
 <script setup async>
 import RobotInformationCard from "@/components/cards/RobotInformationCard.vue";
-import { ref, reactive } from "vue";
 import NextButton from "@/components/UI/NextButton.vue";
 import { StateManager } from '@/stores/StateManager.js'
 
 const SavedStates = StateManager()
-
-let next = ref(false);
 
 // const scrollBottom = () => {
 //     let bottom = document.body.scrollHeight;
 //     window.scrollTo(0, bottom);
 // }
 
+// sends object to pinia 
 const pushFeatureToPiniaArray = (featureId, parameterId) => {
   let data = SavedStates.selectedParameters
+  // makes object 
   const ObjData = { feature: featureId, parameter: parameterId}
   data[featureId-1] = ObjData
+  // overwrites selected data to object pinia
   SavedStates.$patch({
 		selectedParameters: data
 	})
-  setTimeout(
-    console.log(SavedStates.selectedParameters), 500
-  )
 }
 
 const props = defineProps({
   parametersData: {},
 });
 
-console.log("id:" + props.parametersData.id);
 
-let test = reactive(0)
-let parameterID = reactive(props.parametersData.id)
 
 </script>
 

@@ -1,21 +1,3 @@
-<template>
-  <div class="wrapper" v-for="card in productTypeData" :key="card.id">
-    <div class="card" :class="{'card--active': card.active }" >
-      <div class="card__image">
-        <img :src="`/images/${card.image}.png`" alt="">
-        <div v-if="card.active" class="card__image__selected">
-        <img src="@/assets/images/image-checkmark.png" alt="" />
-      </div>
-      </div>
-      <div class="card__content">
-        <h4 class="card__content__header">{{ card.name }}</h4>
-        <p class="card__content__paragraph">{{ card.describtion }}</p>
-        <BaseButton @checkedButton="setActiveCard(card.id), pushFeatureToPiniaArray(1, card.id), $emit('activateNext')"/>
-      </div>
-    </div>
-  </div>
-  </template>
-  
   <script setup>
   import { ref, reactive } from 'vue'
   import BaseButton from '@/components/UI/BaseButton.vue'
@@ -72,6 +54,27 @@ const scrollBottom = () => {
 }
 
   </script>
+
+
+<template>
+  <div class="wrapper" v-for="card in productTypeData" :key="card.id">
+    <div class="card" :class="{'card--active': card.active }" >
+      <div class="card__image">
+        <img :src="`/images/${card.image}.png`" alt="">
+        <div v-if="card.active" class="card__image__selected">
+        <img src="@/assets/images/image-checkmark.png" alt="" />
+      </div>
+      </div>
+      <div class="card__content">
+        <h4 class="card__content__header">{{ card.name }}</h4>
+        <p class="card__content__paragraph">{{ card.describtion }}</p>
+        <BaseButton @checkedButton="setActiveCard(card.id), pushFeatureToPiniaArray(1, card.id), $emit('activateNext')"/>
+      </div>
+    </div>
+  </div>
+  </template>
+  
+
   
   <style lang="scss" scoped>
   .type-card-wrapper .wrapper:nth-child(2){

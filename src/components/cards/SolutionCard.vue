@@ -1,17 +1,4 @@
-<template>
-    <section class="card">
-      <div class="card__image">
-        <img :src="`/images/${productImage}.png`" alt="" />
-      </div>
-      <div class="card__content">
-        <h4 class="card__content__heading">{{ props.productName }}</h4>
-        <p class="card__content__describtion">{{ props.productDesc }}</p>
-        <BaseButton @checkedButton="$emit('selectSolution(product.id)')"/>
-      </div>
-    </section>
-  </template>
-  
-  <script setup>
+ <script setup>
   import {ref} from 'vue'
   import BaseButton from '@/components/BaseButton.vue'
   const productImage = ref(props.productImage)
@@ -36,6 +23,21 @@
   
   
   </script>
+
+<template>
+    <section class="card">
+      <div class="card__image">
+        <img :src="`/images/${productImage}.png`" alt="" />
+      </div>
+      <div class="card__content">
+        <h4 class="card__content__heading">{{ props.productName }}</h4>
+        <p class="card__content__describtion">{{ props.productDesc }}</p>
+        <BaseButton @checkedButton="$emit('selectSolution(product.id)')"/>
+      </div>
+    </section>
+  </template>
+  
+ 
   
   <style lang="scss" scoped>
   .card{

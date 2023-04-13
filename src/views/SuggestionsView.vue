@@ -1,5 +1,4 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
 import { reactive, ref, computed } from 'vue'
 import SuggestionCard from '@/components/cards/SuggestionCard.vue'
 import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
@@ -7,50 +6,49 @@ import StepByStep from '@/components/UI/StepByStep.vue'
 import { RobotStore } from '@/stores/RobotData.js';
 import { StateManager } from '@/stores/StateManager.js'
 
+const SavedStates = StateManager();
 window.scrollTo(0, 0);
 
-const SavedStates = StateManager();
+// set progres for back button
 SavedStates.$patch({
     currentView: 3,
 })
 
+// saves data in variable 
 const robotStore = RobotStore();
-
+// get data from firebase, save data to pinia
 await robotStore.fetchRobotData();
-
+// save pinia data to variable 
 var productData = reactive(robotStore.dataObj);
 
+// reset suggestion data 
 let SuggestionArrayData = []
+// send suggestions in pinia 
 const pushSuggestionToPiniaArray = (productId) => {
     const ObjData = productId
     SuggestionArrayData.push(ObjData)
+    // send data from component to pinia store 
     SavedStates.$patch({
         suggestedSolution: SuggestionArrayData
     })
-    setTimeout(
-        console.log(SavedStates.suggestedSolution), 500
-    )
 }
 
 //Loops through Robots
 for (let i = 0; i < productData.length; i++) {
-    console.log(productData[i].name)
-    let fits = 0;
-    var count = 0
+    let fitsRobot = 0;
     //Loops through Robots.features
     for (let n = 0; n < productData[i].features.length; n++) {
         //Loops through Pinia saved parameters
         for (let t = 0; t < SavedStates.selectedParameters.length; t++) {
-            console.log('Selected Parameter' + SavedStates.selectedParameters[t].parameter)
             if (productData[i].features[n].feature === SavedStates.selectedParameters[t].feature && productData[i].features[n].parameter === SavedStates.selectedParameters[t].parameter) {
-                fits++
+                fitsRobot++
             }
 
         }
 
     }
-    console.log(productData[i].name + ' passer: ' + fits + ' af de valgte parametre')
-    if (fits === SavedStates.selectedParameters.length) {
+    // checks if all parameters fit, then check if category fit 
+    if (fitsRobot === SavedStates.selectedParameters.length) {
         for (let n = 0; n < productData[i].category.length; n++) {
             if (SavedStates.selectedCategory === productData[i].category[n]) {
                 pushSuggestionToPiniaArray(productData[i].id)
@@ -59,15 +57,14 @@ for (let i = 0; i < productData.length; i++) {
     }
 }
 
-
+// for every suggested solution, replace solution entry with database entry 
 for (let i = 0; i < SavedStates.suggestedSolution.length; i++) {
     SavedStates.fetchRobotDataWithId(i, SavedStates.suggestedSolution[i] - 1)
 }
-
 const suggestedProducts = SavedStates.suggestedSolution
 
-console.log(suggestedProducts)
 
+// search function 
 const search = ref('');
 const searchFunction = computed(() => {
     return productData.filter((item) => {

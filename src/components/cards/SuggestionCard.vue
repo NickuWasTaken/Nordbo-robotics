@@ -1,3 +1,59 @@
+<script setup>
+import { ref } from 'vue'
+import BaseButton from '@/components/UI/BaseButton.vue'
+import SelectionModal from '@/components/UI/SelectionModal.vue'
+import { StateManager } from '@/stores/StateManager.js'
+
+const SavedStates = StateManager();
+const productImage = ref(props.productData.image)
+const props = defineProps({
+    productData: {}
+})
+
+// sets currentpage
+const updateStep = () => {
+	SavedStates.$patch({
+		currentPage: 4,
+	})
+}
+
+// update solution array data from the chosen suggestion 
+const updateSolution = () => {
+    SavedStates.$patch({
+        selectedSolution: props.productData
+    })
+    updateStep()
+}
+
+
+// center modal 
+const centerModal = async () => {
+    setTimeout(
+        document.getElementById('modal-wrap').style.top = window.scrollY+'px', 50
+    )
+    
+}
+
+// show modal when selected robot 
+let productSelected = ref(false);
+const selectSolution = async () => {
+    productSelected.value = true;
+    await updateSolution()
+    let radios = document.getElementsByTagName('input');
+    for (let i = 0; i < radios.length; i++)
+        radios[i].checked = false;
+}
+// remove modal when pressed close 
+const closeSolution = () => {
+    productSelected.value = false;
+    let radios = document.getElementsByTagName('input');
+    // sets radios to unchecked
+    for (let i = 0; i < radios.length; i++)
+        radios[i].checked = false;
+    console.log(productSelected.value)
+}
+</script>
+
 <template>
     <section class="card">
         <div class="card__image">
@@ -24,59 +80,7 @@
     
 </template>
   
-<script setup>
-import { ref } from 'vue'
-import BaseButton from '@/components/UI/BaseButton.vue'
-import SelectionModal from '@/components/UI/SelectionModal.vue'
-import { StateManager } from '@/stores/StateManager.js'
 
-const updateStep = () => {
-	SavedStates.$patch({
-		currentPage: 4,
-	})
-}
-
-const SavedStates = StateManager();
-const updateSolution = () => {
-    SavedStates.$patch({
-        selectedSolution: props.productData
-    })
-    updateStep()
-    console.log(SavedStates.selectedSolution)
-}
-
-const productImage = ref(props.productData.image)
-
-const props = defineProps({
-    productData: {}
-})
-
-let productSelected = ref(false);
-
-const centerModal = async () => {
-    setTimeout(
-        document.getElementById('modal-wrap').style.top = window.scrollY+'px', 50
-    )
-    
-}
-
-const selectSolution = async () => {
-    productSelected.value = false;
-    productSelected.value = true;
-    await updateSolution()
-    let radios = document.getElementsByTagName('input');
-    for (let i = 0; i < radios.length; i++)
-        radios[i].checked = false;
-}
-
-const closeSolution = () => {
-    productSelected.value = false;
-    let radios = document.getElementsByTagName('input');
-    for (let i = 0; i < radios.length; i++)
-        radios[i].checked = false;
-    console.log(productSelected.value)
-}
-</script>
   
 <style lang="scss" scoped>
 .card {

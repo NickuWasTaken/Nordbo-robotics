@@ -1,4 +1,7 @@
 <script setup>
+import { RouterLink } from 'vue-router'
+import { ref } from 'vue';
+import { StateManager } from '@/stores/StateManager.js'
 /*
 Kald: 
         <Thesolution 
@@ -8,41 +11,12 @@ Kald:
         productDetails=""
         /> 
 */
-import { RouterLink } from 'vue-router'
-import { ref } from 'vue';
-import { StateManager } from '@/stores/StateManager.js'
+
 
 const SavedStates = StateManager();
 
-const props = defineProps({
-    categoryType: {
-        default: '',
-    },
-    productImage: {
-        type: String,
-        default: 'Sander-1',
-    },
-    productName: {
-        type: String,
-        default: 'Mimic urcap',
-    },
-    productDetails: {
-        type: String,
-        default:
-            'This robot is designed to handle complex sanding projects with precision and efficiency. With its advanced features and customizable programming options, this sanding robot is ideal for manufacturers and craftsmen looking to streamline their production processes.',
-    },
-    productPros: {
-        type: Object,
-    },
-    productCons: {
-        type: Object,
-    },
-    selectedProduct: {
-        type: Object
-    }
-});
 
-const productImage = ref(props.productImage)
+const productImage = ref(SavedStates.selectedSolution.image)
 
 </script>
 

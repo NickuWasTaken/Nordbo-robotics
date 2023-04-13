@@ -1,12 +1,10 @@
 <script setup>
 import BaseButton from '@/components/UI/BaseButton.vue'
 
-
 const props = defineProps( { 
    parameterFeature: {},
 
 })
-
 
 </script>
 
@@ -19,7 +17,6 @@ const props = defineProps( {
         <BaseButton @CheckedButton="$emit('checkedButton')"/>
     </div>
 </div>
-
 
 </template>
 

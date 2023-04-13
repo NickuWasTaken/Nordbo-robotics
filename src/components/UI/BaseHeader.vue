@@ -1,3 +1,23 @@
+  <script setup>
+import { StateManager } from '@/stores/StateManager.js'
+const SavedStates = StateManager();
+
+// return string with router link based on currentview 
+const previousPage = () => {
+  if (SavedStates.currentView == 2){
+    return '/'
+  }
+  if (SavedStates.currentView == 3){
+    return '/parameters'
+  }
+  if (SavedStates.currentView == 4){
+    return '/suggestions'
+  } else {
+    return '/'
+  }
+}
+  </script>
+
 <template>
   <div class="header-push">
     <header class="header">
@@ -14,24 +34,7 @@
     </div>
   </template>
   
-  <script setup>
-import { StateManager } from '@/stores/StateManager.js'
-const SavedStates = StateManager();
 
-const previousPage = () => {
-  if (SavedStates.currentView == 2){
-    return '/'
-  }
-  if (SavedStates.currentView == 3){
-    return '/parameters'
-  }
-  if (SavedStates.currentView == 4){
-    return '/suggestions'
-  } else {
-    return '/'
-  }
-}
-  </script>
   
   <style lang="scss" scoped>
   .header-push{
