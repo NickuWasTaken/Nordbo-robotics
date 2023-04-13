@@ -14,9 +14,12 @@ Kald:
 
 
 const SavedStates = StateManager();
-
-
 const productImage = ref(SavedStates.selectedSolution.image)
+
+const resetStateManager = () => {
+    SavedStates.$reset()
+}
+
 
 </script>
 
@@ -40,13 +43,13 @@ const productImage = ref(SavedStates.selectedSolution.image)
         </section>
         <div class="last-steps">
             <RouterLink to="/">
-                <div class="last-steps__restart">
+                <div class="last-steps__restart" @click="resetStateManager()">
                     <p>Start over</p>
                     <img src="@/assets/icons/blue-return.png" class="last-steps__icon" alt="">
                 </div>
             </RouterLink>
-            <a class="last-steps__save-pdf">Choose solution <img src="@/assets/icons/pdf-icon.png" class="last-steps__icon"
-                    alt=""></a>
+            <a class="last-steps__save-pdf" @click="MakePDFWithSuggestedSolution()">Choose solution <img
+                    src="@/assets/icons/pdf-icon.png" class="last-steps__icon" alt=""></a>
         </div>
     </div>
 </template>
@@ -90,25 +93,51 @@ const productImage = ref(SavedStates.selectedSolution.image)
         }
 
         &__info__wrap {
-            height: 650px;
-            overflow-y: auto;
+            height: 100%;
         }
 
         &__info {
-            height: 100%;
+            height: inherit;
             padding: 125px 120px 125px 64px;
 
-            h1,
-            h2 {
-                margin: 0;
-                text-transform: uppercase;
-                line-height: 1;
-                text-align: left;
-                padding-top: 0;
-            }
+            &__product {
+                height: inherit;
 
-            caption {
-                color: var(--inactive-default);
+                h1,
+                h2 {
+                    margin: 0;
+                    text-transform: uppercase;
+                    line-height: 1;
+                    text-align: left;
+                    padding-top: 0;
+                }
+
+                caption {
+                    color: var(--inactive-default);
+                }
+
+                p {
+                    height: 85%;
+                    overflow-y: auto;
+                    padding-bottom: 20px;
+                    padding-right: 10px;
+                }
+
+                ::-webkit-scrollbar {
+                    width: 6px;
+                }
+
+                ::-webkit-scrollbar-track {
+                    background: #f1f1f1;
+                }
+
+                ::-webkit-scrollbar-thumb {
+                    background: #888;
+                }
+
+                ::-webkit-scrollbar-thumb:hover {
+                    background: #555;
+                }
             }
         }
     }

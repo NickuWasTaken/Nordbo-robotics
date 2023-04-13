@@ -50,7 +50,6 @@ const closeSolution = () => {
     // sets radios to unchecked
     for (let i = 0; i < radios.length; i++)
         radios[i].checked = false;
-    console.log(productSelected.value)
 }
 </script>
 

@@ -14,7 +14,6 @@ const SavedStates = StateManager();
 		currentView: 1,
 	})
 
-
 </script>
 
 <template>
