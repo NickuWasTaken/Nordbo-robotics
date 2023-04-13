@@ -48,9 +48,6 @@ let parameterID = reactive(props.parametersData.id)
           :key="features.id" :parameterFeature="features"/>
       </form>
     </div>
-    <RouterLink to="suggestions">
-      <NextButton />
-    </RouterLink>
   </form>
 </template>
 

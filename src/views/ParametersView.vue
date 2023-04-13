@@ -10,6 +10,7 @@ import ParametersSteps from "@/components/UI/ParametersSteps.vue";
 import StepByStep from "@/components/UI/StepByStep.vue";
 import { ParameterStore } from "@/stores/ParameterData.js";
 import { StateManager } from '@/stores/StateManager.js'
+import NextButton from '@/components/UI/NextButton.vue'
 
 const SavedStates = StateManager();
 
@@ -24,6 +25,12 @@ await parameterData.fetchParameterData();
 var parameters = reactive(parameterData.dataObj);
 
 let robotInformationCheck = ref(false);
+
+const resetSolution = () => {
+	SavedStates.$patch({
+		suggestedSolution: []
+	})
+}
 
 console.log(SavedStates.selectedCategory)
 </script>
@@ -43,6 +50,9 @@ console.log(SavedStates.selectedCategory)
       :key="parameter.id"
     />
   </div>
+  <RouterLink to="suggestions">
+      <NextButton @check="resetSolution()"/>
+    </RouterLink>
 </template>
 
 <style scoped>

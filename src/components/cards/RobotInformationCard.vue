@@ -66,8 +66,12 @@ const props = defineProps( {
         height: 80px;
         
     }
-
  }
+ .card-volume--disabled{
+        opacity: 0.5;
+        background: var(--nr-inactive);
+        filter: grayscale(1);
+    }
     
 }
 

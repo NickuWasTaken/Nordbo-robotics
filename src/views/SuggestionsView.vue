@@ -20,12 +20,12 @@ await robotStore.fetchRobotData();
 
 var productData = reactive(robotStore.dataObj);
 
+let SuggestionArrayData = []
 const pushSuggestionToPiniaArray = (productId) => {
-    let data = []
     const ObjData = productId
-    data.push(ObjData)
+    SuggestionArrayData.push(ObjData)
     SavedStates.$patch({
-        suggestedSolution: data
+        suggestedSolution: SuggestionArrayData
     })
     setTimeout(
         console.log(SavedStates.suggestedSolution), 500
