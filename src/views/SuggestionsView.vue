@@ -124,7 +124,7 @@ console.log(suggestedProducts);
 				maxlength="15"
 			/>
 		</div>
-		<RouterLink to="/">
+		<RouterLink to="/" @click="SavedStates.$reset()">
 			<button>
 				<a>Start over</a>
 				<div class="return-icon"></div>
