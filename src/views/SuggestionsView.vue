@@ -85,19 +85,27 @@ console.log(suggestedProducts);
 	<StepByStep :progress="SavedStates.currentPage" />
 	<HeadlineHeader>Suggestions</HeadlineHeader>
 	<div class="wrapper">
-		<p class="no-results" v-if="suggestedProducts.length == 0">
-			Sorry... <br />
-			It seems none of our products satisfy the client's needs, we are therefore
-			unable to suggest a solution. If you believe this to be an error, restart
-			the application progress
-		</p>
-		<SuggestionCard
-			v-for="suggestedProduct in suggestedProducts"
-			:product-data="suggestedProduct"
-			:key="suggestedProduct.id"
-		/>
-		<!-- <SuggestionCard v-for="product in searchFunction" :product-data="product" :key="product.id"
-             /> -->
+		<div class="suggestion-wrapper" v-if="!search">
+			<p class="no-results" v-if="suggestedProducts.length == 0 && !search">
+				Sorry... <br />
+				It seems none of our products satisfy the client's needs, we are
+				therefore unable to suggest a solution. If you believe this to be an
+				error, restart the application progress
+			</p>
+
+			<SuggestionCard
+				v-for="suggestedProduct in suggestedProducts"
+				:product-data="suggestedProduct"
+				:key="suggestedProduct.id"
+			/>
+		</div>
+		<div class="search-wrapper" v-if="search">
+			<SuggestionCard
+				v-for="product in searchFunction"
+				:product-data="product"
+				:key="product.id"
+			/>
+		</div>
 	</div>
 	<p>End of results.</p>
 	<p>
@@ -144,6 +152,13 @@ console.log(suggestedProducts);
 	.no-results::first-line {
 		font-size: 20px;
 		font-weight: 600;
+	}
+
+	.search-wrapper,
+	.suggestion-wrapper {
+		width: inherit;
+		display: flex;
+		justify-content: space-around;
 	}
 }
 
