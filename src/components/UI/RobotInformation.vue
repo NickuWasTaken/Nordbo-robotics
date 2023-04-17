@@ -26,7 +26,11 @@ const props = defineProps({
   parametersData: {},
 });
 
-
+const setNextStep = () =>{
+  SavedStates.$patch({
+		currentPage: 3
+	})
+}
 
 </script>
 
@@ -38,7 +42,7 @@ const props = defineProps({
       <div class="description-text">{{ props.parametersData.describtion }} </div>
       </p>
       <form action="">
-        <RobotInformationCard @CheckedButton="pushFeatureToPiniaArray(props.parametersData.id, features.id), $emit('scrollEmit')" v-for="features in props.parametersData.features"
+        <RobotInformationCard @CheckedButton="pushFeatureToPiniaArray(props.parametersData.id, features.id), $emit('scrollEmit'), setNextStep()" v-for="features in props.parametersData.features"
           :key="features.id" :parameterFeature="features" />
       </form>
     </div>
