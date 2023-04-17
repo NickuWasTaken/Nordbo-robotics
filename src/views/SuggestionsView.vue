@@ -85,6 +85,12 @@ console.log(suggestedProducts);
 	<StepByStep :progress="SavedStates.currentPage" />
 	<HeadlineHeader>Suggestions</HeadlineHeader>
 	<div class="wrapper">
+		<p class="no-results" v-if="suggestedProducts.length == 0">
+			Sorry... <br />
+			It seems none of our products satisfy the client's needs, we are therefore
+			unable to suggest a solution. If you believe this to be an error, restart
+			the application progress
+		</p>
 		<SuggestionCard
 			v-for="suggestedProduct in suggestedProducts"
 			:product-data="suggestedProduct"
@@ -126,7 +132,19 @@ console.log(suggestedProducts);
 	display: flex;
 	gap: 20px;
 	flex-wrap: wrap;
+	justify-content: center;
 	padding-bottom: 100px;
+
+	.no-results {
+		margin-top: 20px;
+		text-align: center;
+		width: 400px;
+		overflow-wrap: break-word;
+	}
+	.no-results::first-line {
+		font-size: 20px;
+		font-weight: 600;
+	}
 }
 
 p {
