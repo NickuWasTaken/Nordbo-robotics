@@ -173,9 +173,9 @@ button {
 	padding: 16px 40px;
 	height: 56px;
 	width: 190px;
-	background: #62c3e9;
+	background: var(--nr-brand-bluemana-500);
 	border-radius: 77px;
-	font-family: 'Roboto';
+	font-family: var(--nr-font-default);
 	font-size: 18px;
 	line-height: 24px;
 
@@ -202,13 +202,13 @@ button {
 		gap: 25px;
 		width: 460px;
 		height: 56px;
-		background: #f5f5f5;
+		background: var(--nr-grey-soft);
 		border-radius: 200px;
 
 		input {
 			border: none;
 			background: #f5f5f5;
-			font-family: 'Roboto';
+			font-family: var(--nr-font-default);
 			font-size: 18px;
 			color: #8e98a8;
 			outline: 0;

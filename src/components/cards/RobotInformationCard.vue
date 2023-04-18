@@ -37,28 +37,28 @@ const props = defineProps( {
         height: 226px;
         padding: 0 16px;
         width: 590px;
-        background: #FFFFFF;
+        background: var(--nr-white);
         border-radius: 12px;
         margin-bottom: 20px;
     
     &__header{
         // width: 162px;
-        font-family: 'Roboto';
+        font-family: var(--nr-font-default);
         font-weight: 700;
         font-size: 28px;
         line-height: 34px;
         text-transform: capitalize;
-        color: #000000;
+        color: var(--nr-font-color-default);
         margin: 16px 0;
     }
     &__description{
         margin: 16px  0;
         width: 558px;
-        font-family: 'Roboto';
+        font-family: var(--nr-font-default);
         font-weight: 400;
         font-size: 18px;
         line-height: 24px;
-        color: #000000;
+        color: var(--nr-font-color-default);
         padding-bottom: 16px;
         height: 80px;
         

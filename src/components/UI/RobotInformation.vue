@@ -65,7 +65,7 @@ const setNextStep = () =>{
   }
 
   #precision {
-    background-color: white;
+    background-color: var(--nr-white);
   }
 
   .production-type {
@@ -80,11 +80,11 @@ const setNextStep = () =>{
     &__header {
       max-width: 1200px;
       height: 66px;
-      font-family: "Roboto";
+      font-family: var(--nr-font-default);
       font-weight: 700;
       font-size: 48px;
       line-height: 66px;
-      color: #000000;
+      color: var(--nr-font-color-default);
       margin: auto;
       margin-bottom: 8px;
       margin-top: 32px;
@@ -92,11 +92,11 @@ const setNextStep = () =>{
 
     &__description {
       max-width: 1200px;
-      font-family: "Roboto";
+      font-family: var(--nr-font-default);
       font-weight: 400;
       font-size: 18px;
       line-height: 24px;
-      color: #000000;
+      color: var(--nr-font-color-default);
       margin: auto;
       margin-top: 8px;
       margin-bottom: 56px;
@@ -105,7 +105,7 @@ const setNextStep = () =>{
 }
 
 .wrapper:nth-child(odd) .production-type {
-  background-color: white;
+  background-color: var(--nr-white);
   
 }
 

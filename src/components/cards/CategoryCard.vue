@@ -127,7 +127,7 @@ const searchFunction = computed(() => {
 		background: url('@/assets/icons/checkmark-card.png');
 		background-size: cover;
 		border-radius: 100%;
-		background-color: white;
+		background-color: var(--nr-white);
 	}
 
 	.card {
@@ -143,7 +143,7 @@ const searchFunction = computed(() => {
 		&__name {
 			width: 199px;
 			height: 34px;
-			font-family: 'Roboto';
+			font-family: var(--nr-font-default);
 			font-style: normal;
 			font-weight: 700;
 			font-size: 28px;
@@ -156,7 +156,7 @@ const searchFunction = computed(() => {
 		&__text {
 			width: 263px;
 			height: 96px;
-			font-family: 'Roboto';
+			font-family: var(--nr-font-default);
 			font-style: normal;
 			font-weight: 400;
 			font-size: 18px;
@@ -228,11 +228,11 @@ const searchFunction = computed(() => {
 	&__header {
 		width: 590px;
 		height: 44px;
-		font-family: 'Roboto';
+		font-family: var(--nr-font-default);
 		font-size: 36px;
 		line-height: 44px;
 		letter-spacing: 1.2px;
-		color: #02112e;
+		color: var(	--nr-font-color-default);
 		margin-bottom: 0;
 	}
 
@@ -241,7 +241,7 @@ const searchFunction = computed(() => {
 
 		width: 566px;
 		height: 72px;
-		font-family: 'Roboto';
+		font-family: var(--nr-font-default);
 		font-style: normal;
 		font-weight: 400;
 		font-size: 18px;
@@ -263,8 +263,8 @@ const searchFunction = computed(() => {
 
 		input {
 			border: none;
-			background: #f5f5f5;
-			font-family: 'Roboto';
+			background: var(--nr-grey-soft);
+			font-family: var(--nr-font-default);
 			font-size: 18px;
 			color: #8e98a8;
 			outline: 0;
