@@ -90,14 +90,12 @@ const productImage = ref(props.productImage)
 
 <style lang="scss" scoped>
 .wrap {
-    top: 0;
-    left: 0;
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
+    z-index:150;
+    top: 50%;
+    left: 50%;
+    position: fixed;
+    transform: translate(-50%, -50%);
+
 
     .modal {
 
