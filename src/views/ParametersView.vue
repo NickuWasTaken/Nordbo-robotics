@@ -75,6 +75,9 @@ const scrollDownElement = (id) => {
 			:key="parameter.id"
 			@scrollEmit="scrollDownElement(parameter.id)"
 		/>
+			<RouterLink to="suggestions">
+		<NextButton @check="resetSolution()" />
+	</RouterLink>
 		<div class="optional-header"><HeadlineHeader>Optional Parameters</HeadlineHeader></div>
 		<RobotInformationOptional
 			:parametersData="parameter"
@@ -83,9 +86,7 @@ const scrollDownElement = (id) => {
 			@scrollEmit="scrollDownElement(parameter.id)"
 		/>
 	</div>
-	<RouterLink to="suggestions">
-		<NextButton @check="resetSolution()" />
-	</RouterLink>
+
 </template>
 
 <style scoped lang="scss">

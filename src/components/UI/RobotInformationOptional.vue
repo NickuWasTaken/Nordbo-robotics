@@ -105,7 +105,7 @@ const setNextStep = () =>{
   }
 }
 
-.wrapper:nth-child(even) .production-type {
+.wrapper:nth-child(odd) .production-type {
   background-color: var(--nr-white);
   
 }
