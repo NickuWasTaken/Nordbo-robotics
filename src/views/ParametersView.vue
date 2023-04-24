@@ -2,6 +2,7 @@
 import { ref, reactive } from 'vue';
 import CategoryCard from '@/components/cards/CategoryCard.vue';
 import RobotInformation from '@/components/UI/RobotInformation.vue';
+import RobotInformationOptional from '@/components/UI/RobotInformationOptional.vue';
 import RobotInformationCard from '@/components/cards/RobotInformationCard.vue';
 import HeadlineHeader from '@/components/UI/HeadlineHeader.vue';
 import TypeCard from '@/components/cards/TypeCard.vue';
@@ -74,13 +75,20 @@ const scrollDownElement = (id) => {
 			:key="parameter.id"
 			@scrollEmit="scrollDownElement(parameter.id)"
 		/>
+		<div class="optional-header"><HeadlineHeader>Optional Parameters</HeadlineHeader></div>
+		<RobotInformationOptional
+			:parametersData="parameter"
+			v-for="parameter in parameters"
+			:key="parameter.id"
+			@scrollEmit="scrollDownElement(parameter.id)"
+		/>
 	</div>
 	<RouterLink to="suggestions">
 		<NextButton @check="resetSolution()" />
 	</RouterLink>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .type-card-wrapper {
 	display: flex;
 	justify-content: space-between;
@@ -88,5 +96,14 @@ const scrollDownElement = (id) => {
 	padding-left: 40px;
 	max-width: 1240px;
 	margin-bottom: 60px;
+}
+
+.optional-header{
+	background-color: #f4f4f4;
+
+	h1{
+		padding-top: 80px;
+		margin-bottom: 0px !important;
+	}
 }
 </style>

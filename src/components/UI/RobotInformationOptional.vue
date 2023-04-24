@@ -2,6 +2,7 @@
 import RobotInformationCard from "@/components/cards/RobotInformationCard.vue";
 import NextButton from "@/components/UI/NextButton.vue";
 import { StateManager } from '@/stores/StateManager.js'
+import HeadlineHeader from '@/components/UI/HeadlineHeader.vue'
 
 const SavedStates = StateManager()
 
@@ -35,7 +36,7 @@ const setNextStep = () =>{
 </script>
 
 <template>
-  <form class="wrapper" v-if="!props.parametersData.optional">
+  <form class="wrapper" v-if="props.parametersData.optional">
     <div class="production-type">
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
       <p class="production-type__description">
@@ -104,7 +105,7 @@ const setNextStep = () =>{
   }
 }
 
-.wrapper:nth-child(odd) .production-type {
+.wrapper:nth-child(even) .production-type {
   background-color: var(--nr-white);
   
 }
