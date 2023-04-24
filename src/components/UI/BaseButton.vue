@@ -1,5 +1,6 @@
 <script setup>
 
+defineEmits(['checkedButton'])
 
 let random = Math.floor(Math.random() * 1000000);
 
@@ -8,7 +9,7 @@ let random = Math.floor(Math.random() * 1000000);
 <template>
 
     <input  type="radio" :id="random" name="check" >
-    <label :for="random" @click="$emit('checkedButton')"></label>
+    <label :for="random" @click="() => $emit('checkedButton')"></label>
 
 
 </template>
@@ -26,7 +27,7 @@ label {
       color: var(--nr-font-color-default);
       min-width: 133px;
       height: 56px;
-      border:none;
+      border: none;
       background-color: var(--nr-brand-bluemana-500);
       border-radius: 77px;
       cursor: pointer;

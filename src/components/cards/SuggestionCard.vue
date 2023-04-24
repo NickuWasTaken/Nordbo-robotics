@@ -43,6 +43,7 @@ const selectSolution = async () => {
     for (let i = 0; i < radios.length; i++)
         radios[i].checked = false;
 }
+
 // remove modal when pressed close 
 const closeSolution = () => {
     productSelected.value = false;
@@ -61,7 +62,7 @@ const closeSolution = () => {
         <div class="card__content">
             <h4 class="card__content__heading">{{ props.productData.name }}</h4>
             <p class="card__content__describtion">{{ props.productData.desc }}</p>
-            <BaseButton @checkedButton=" selectSolution(), centerModal()" />
+            <BaseButton @checkedButton="selectSolution()" />
         </div>
     </section>
 

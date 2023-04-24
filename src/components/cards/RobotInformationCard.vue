@@ -5,7 +5,6 @@ const props = defineProps( {
    parameterFeature: {},
 
 })
-
 </script>
 
 

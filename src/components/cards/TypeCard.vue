@@ -15,6 +15,8 @@ const pushFeatureToPiniaArray = (featureId, parameterId) => {
 	setTimeout(console.log(SavedStates.selectedParameters), 500);
 };
 
+defineEmits(['activateNext'])
+
 const productTypeData = reactive([
 	{
 		id: 1,
@@ -68,6 +70,7 @@ const scrollDownElement = (id) => {
 		window.scrollBy(0, elementHeight);
 	}
 };
+
 </script>
 
 <template>

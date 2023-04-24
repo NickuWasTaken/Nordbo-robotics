@@ -30,7 +30,7 @@ const setNextStep = () =>{
 		currentPage: 3
 	})
 }
-
+defineEmits(['checkedButton', 'scrollEmit'])
 </script>
 
 <template>

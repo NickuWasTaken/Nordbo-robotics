@@ -57,6 +57,7 @@ const scrollDownElement = (id) => {
 		window.scrollBy(0, elementHeight);
 	}
 };
+
 </script>
 
 <template>
