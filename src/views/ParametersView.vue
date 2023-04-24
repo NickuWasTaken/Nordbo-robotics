@@ -1,9 +1,7 @@
 <script setup async>
 import { ref, reactive } from 'vue';
-import CategoryCard from '@/components/cards/CategoryCard.vue';
 import RobotInformation from '@/components/UI/RobotInformation.vue';
 import RobotInformationOptional from '@/components/UI/RobotInformationOptional.vue';
-import RobotInformationCard from '@/components/cards/RobotInformationCard.vue';
 import HeadlineHeader from '@/components/UI/HeadlineHeader.vue';
 import TypeCard from '@/components/cards/TypeCard.vue';
 import ParametersSteps from '@/components/UI/ParametersSteps.vue';
@@ -94,8 +92,8 @@ const scrollDownElement = (id) => {
 	display: flex;
 	justify-content: space-between;
 	margin: 0 auto;
-	padding-left: 40px;
-	max-width: 1240px;
+	padding-left: 30px;
+	max-width: 1230px;
 	margin-bottom: 60px;
 }
 

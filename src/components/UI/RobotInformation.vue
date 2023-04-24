@@ -1,6 +1,5 @@
 <script setup async>
 import RobotInformationCard from "@/components/cards/RobotInformationCard.vue";
-import NextButton from "@/components/UI/NextButton.vue";
 import { StateManager } from '@/stores/StateManager.js'
 
 const SavedStates = StateManager()
@@ -38,9 +37,9 @@ const setNextStep = () =>{
   <form class="wrapper" v-if="!props.parametersData.optional">
     <div class="production-type">
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
-      <p class="production-type__description">
+      <div class="production-type__description">
       <div class="description-text">{{ props.parametersData.describtion }} </div>
-      </p>
+      </div>
       <form action="">
         <RobotInformationCard @CheckedButton="pushFeatureToPiniaArray(props.parametersData.id, features.id), $emit('scrollEmit'), setNextStep()" v-for="features in props.parametersData.features"
           :key="features.id" :parameterFeature="features" />
@@ -51,7 +50,7 @@ const setNextStep = () =>{
 
 <style lang="scss" scoped>
 .wrapper {
-  margin: 0 auto;
+  margin: 0;
 
   .description-text {
     width: 900px;
@@ -59,8 +58,9 @@ const setNextStep = () =>{
 
   form {
     display: flex;
-    width: 1280px;
+    width: 1200px;
     margin: auto;
+    justify-content: space-between;
     flex-wrap: wrap;
   }
 

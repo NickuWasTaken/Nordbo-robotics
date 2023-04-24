@@ -1,5 +1,5 @@
 <script setup>
-import { ref, reactive } from 'vue';
+import { reactive } from 'vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 import { StateManager } from '@/stores/StateManager.js';
 

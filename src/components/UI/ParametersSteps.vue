@@ -6,9 +6,6 @@
     </ul>
 </template>
 
-<script>
-
-</script>
 
 <style lang="scss" scoped>
 ul{
