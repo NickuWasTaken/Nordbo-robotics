@@ -58,6 +58,12 @@ const scrollDownElement = (id) => {
 	}
 };
 
+let parameterProgress = ref(2)
+async function addCount() {
+	if (parameterProgress.value < 4) {
+		parameterProgress.value++;
+	}
+}
 </script>
 
 <template>
@@ -70,11 +76,13 @@ const scrollDownElement = (id) => {
 	<div class="parameter-wrapper">
 		<RobotInformation
 			:parametersData="parameter"
+			:step="parameterProgress"
 			v-for="parameter in parameters"
 			:key="parameter.id"
 			@scrollEmit="scrollDownElement(parameter.id)"
+			@addCount="addCount()"
 		/>
-			<RouterLink to="suggestions">
+			<RouterLink to="suggestions" v-show="parameterProgress > 3">
 		<NextButton @check="resetSolution()" />
 	</RouterLink>
 		<div class="optional-header"><HeadlineHeader>Optional Parameters</HeadlineHeader></div>
@@ -104,6 +112,7 @@ const scrollDownElement = (id) => {
 	h1{
 		padding-top: 80px;
 		margin-bottom: 0px !important;
+		margin-top: 0;
 	}
 }
 </style>

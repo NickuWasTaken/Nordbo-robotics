@@ -23,6 +23,7 @@ const pushFeatureToPiniaArray = (featureId, parameterId) => {
 
 const props = defineProps({
   parametersData: {},
+  step: Number,
 });
 
 const setNextStep = () =>{
@@ -31,17 +32,19 @@ const setNextStep = () =>{
 	})
 }
 defineEmits(['checkedButton', 'scrollEmit'])
+console.log(props.step)
+
 </script>
 
 <template>
-  <form class="wrapper" v-if="!props.parametersData.optional">
+  <form class="wrapper" v-if="!props.parametersData.optional" v-show="props.parametersData.step <= step">
     <div class="production-type">
       <h2 class="production-type__header">{{ props.parametersData.name }}</h2>
       <div class="production-type__description">
       <div class="description-text">{{ props.parametersData.describtion }} </div>
       </div>
       <form action="">
-        <RobotInformationCard @CheckedButton="pushFeatureToPiniaArray(props.parametersData.id, features.id), $emit('scrollEmit'), setNextStep()" v-for="features in props.parametersData.features"
+        <RobotInformationCard @CheckedButton="pushFeatureToPiniaArray(props.parametersData.id, features.id), $emit('scrollEmit'),$emit('addCount'), setNextStep()" v-for="features in props.parametersData.features"
           :key="features.id" :parameterFeature="features" />
       </form>
     </div>
