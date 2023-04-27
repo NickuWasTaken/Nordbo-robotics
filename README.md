@@ -15,9 +15,9 @@
 
 ## Key Features
 
-* ....
-* ....
-* ....
+* searchbar 
+* suggestion based on chosen parameters 
+* pinia stores 
 
 
 ## How To Use
@@ -26,10 +26,10 @@ To clone and run this application, you'll need [Git](https://git-scm.com) and [N
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/...
+$ git clone https://github.com/NickuWasTaken/Nordbo-robotics.git
 
 # Go into the repository
-$ cd ...
+$ cd Nordbo-robotics 
 
 # Install dependencies
 $ npm install
