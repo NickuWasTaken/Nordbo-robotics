@@ -33,6 +33,8 @@ const pushSuggestionToPiniaArray = (productId) => {
 	});
 };
 
+const selectedFeatures = SavedStates.selectedParameters.filter(item => item.feature != null).length;
+
 //Loops through Robots
 for (let i = 0; i < productData.length; i++) {
 	let fitsRobot = 0;
@@ -54,7 +56,7 @@ for (let i = 0; i < productData.length; i++) {
 		}
 	}
 	// checks if all parameters fit, then check if category fit
-	if (fitsRobot === SavedStates.selectedParameters.length) {
+	if (fitsRobot === selectedFeatures) {
 		for (let n = 0; n < productData[i].category.length; n++) {
 			if (SavedStates.selectedCategory === productData[i].category[n]) {
 				pushSuggestionToPiniaArray(productData[i].id);
