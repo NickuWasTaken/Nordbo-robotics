@@ -9,7 +9,7 @@ let random = Math.floor(Math.random() * 1000000);
 <template>
 
     <input  type="radio" :id="random" name="check" >
-    <label :for="random" @click="() => $emit('checkedButton')"></label>
+    <label :for="random" @click="() => $emit('checkedButton')"><slot /></label>
 
 
 </template>
