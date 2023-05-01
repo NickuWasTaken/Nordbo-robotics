@@ -100,7 +100,7 @@ const searchFunction = computed(() => {
 			<div class="card__image">
 				<div class="card__triangle"></div>
 				<div class="card__triangle-overlay" v-if="product.active"></div>
-				<img :src="`/images/${product.image}`" alt="" />
+				<img :src="`./images/${product.image}`" alt="" />
 			</div>
 		</div>
 	</div>

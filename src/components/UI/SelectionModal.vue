@@ -48,7 +48,7 @@ const productImage = ref(props.productImage)
     <div class="wrap" id="modal-wrap">
         <section class="modal">
             <aside class="modal__product">
-                <img :src="`/images/${productImage}.png`" />
+                <img :src="`./images/${productImage}.png`" />
             </aside>
             <main class="modal__info">
                 <header class="modal__info__header">

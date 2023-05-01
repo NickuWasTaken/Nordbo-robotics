@@ -27,7 +27,7 @@ const resetStateManager = () => {
     <div class="wrap">
         <section class="solution">
             <aside class="solution__product">
-                <img :src="`/images/${productImage}.png`" />
+                <img :src="`./images/${productImage}.png`" />
             </aside>
             <main class="solution__info">
                 <div class="solution__info__wrap">

@@ -77,7 +77,7 @@ const scrollDownElement = (id) => {
 	<div class="wrapper" v-for="card in productTypeData" :key="card.id">
 		<div class="card" :class="{ 'card--active': card.active }">
 			<div class="card__image">
-				<img :src="`/images/${card.image}.png`" alt="" />
+				<img :src="`./images/${card.image}.png`" alt="" />
 				<div v-if="card.active" class="card__image__selected">
 					<img src="@/assets/images/image-checkmark.png" alt="" />
 				</div>

@@ -57,7 +57,7 @@ const closeSolution = () => {
 <template>
     <section class="card">
         <div class="card__image">
-            <img :src="`/images/${productImage}.png`" alt="" />
+            <img :src="`./images/${productImage}.png`" alt="" />
         </div>
         <div class="card__content">
             <h4 class="card__content__heading">{{ props.productData.name }}</h4>
