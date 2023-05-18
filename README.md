@@ -56,4 +56,4 @@ This software uses the following packages:
 
 ## Made by 
 
-signeth2 and NickuWasTaken
+[signeth2](https://github.com/signeth2) and [NickuWasTaken](https://github.com/NickuWasTaken)
