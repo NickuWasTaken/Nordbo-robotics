@@ -2,8 +2,16 @@
 import { reactive } from 'vue';
 import BaseButton from '@/components/UI/BaseButton.vue';
 import { StateManager } from '@/stores/StateManager.js';
+import { ParameterStore } from "@/stores/ParameterData.js";
 
 const SavedStates = StateManager();
+
+// saves data in variable
+const parameterData = ParameterStore();
+// get data from firebase, save data to pinia
+await parameterData.fetchFirstParameterData();
+// save pinia data to variable
+var productTypeData = reactive(parameterData.robotType.features);
 
 const pushFeatureToPiniaArray = (featureId, parameterId) => {
 	let data = SavedStates.selectedParameters;
@@ -12,29 +20,9 @@ const pushFeatureToPiniaArray = (featureId, parameterId) => {
 	SavedStates.$patch({
 		selectedParameters: data,
 	});
-	setTimeout(console.log(SavedStates.selectedParameters), 500);
 };
 
 defineEmits(['activateNext'])
-
-const productTypeData = reactive([
-	{
-		id: 1,
-		name: 'Industrial',
-		describtion:
-			'Industrial robot applications offer numerous benefits, such as increased productivity, improved quality and consistency, reduced labor costs, and enhanced workplace safety',
-		image: 'springfieldevice',
-		active: false,
-	},
-	{
-		id: 2,
-		name: 'Collaborative',
-		describtion:
-			'Collaborative robots are designed to perform a wide range of tasks in various industries, including manufacturing, healthcare, and logistics and many more',
-		image: 'springfieldevice-2',
-		active: false,
-	},
-]);
 
 const setActiveCard = (id) => {
 	let i = 0;
@@ -53,8 +41,6 @@ const setActiveCard = (id) => {
 const scrollDownElement = (id) => {
 	// Get the element to scroll to using querySelector
 	const currentElement = document.querySelector('.type-card-wrapper');
-	console.log(currentElement);
-	console.log(id);
 	// Get the height of the current element
 	const elementHeight = currentElement.offsetHeight;
 

@@ -12,6 +12,7 @@ export const RobotStore = defineStore('robot', {
 			);
 			this.dataObj = response.data;
 		},
+		
 	},
 	persist: true,
 });

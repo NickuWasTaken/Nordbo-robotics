@@ -15,3 +15,4 @@ export const categoryStore = defineStore('category', {
 	},
 	persist: true,
 });
+

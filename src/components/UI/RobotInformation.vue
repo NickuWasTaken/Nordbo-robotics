@@ -32,7 +32,6 @@ const setNextStep = () =>{
 	})
 }
 defineEmits(['checkedButton', 'scrollEmit'])
-console.log(props.step)
 
 </script>
 

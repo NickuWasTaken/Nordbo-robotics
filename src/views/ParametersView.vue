@@ -50,8 +50,7 @@ const scrollDownElement = (id) => {
   const currentElement = document.querySelector(
     ".parameter-wrapper form:nth-of-type(" + id + ")"
   );
-  console.log(currentElement);
-  console.log(id);
+
   // Get the height of the current element
   const elementHeight = currentElement.offsetHeight;
 

@@ -79,8 +79,6 @@ const searchFunction = computed(() => {
 	});
 });
 
-console.log(SavedStates.selectedParameters);
-console.log(suggestedProducts);
 </script>
 
 <template>
