@@ -41,7 +41,7 @@ $ npm run dev
 
 ## Credits
 
-This software uses the following open source packages:
+This software uses the following packages:
 
 - [Vue.js](https://vuejs.org)
 - [Pinia](https://pinia.vuejs.org)
