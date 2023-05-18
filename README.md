@@ -35,7 +35,7 @@ $ cd Nordbo-robotics
 $ npm install
 
 # Run the app
-$ npm start
+$ npm run dev
 ```
 
 
@@ -48,6 +48,7 @@ This software uses the following open source packages:
 - [Firebase](https://firebase.google.com)
 - [Vite](https://vitejs.dev)
 - [Node](https://nodejs.org/en)
+- [SASS](https://sass-lang.com/)
 
 
 
